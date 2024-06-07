@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design</title>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div class="language-ar interior-design-main interior_design">
+        <!--Header-->
+        <div class="header_carousel">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item item1_ae overlay active"> </div>
+                    <div class="item item2_ae overlay"> </div>
+                    <div class="item item3_ae overlay"> </div>
+                    <div class="item item4_ae overlay"> </div>
+                    <div class="item item5_ae overlay"> </div>
+                    <div class="item item6_ae overlay"> </div>
+                </div>
+            </div>
+        </div>
+        <!--header text-->
+        <div class="col-xs-12 header_text_form">
+            <div class="container">
+                <div class="col-sm-6 col-xs-12 header_text">
+                    <div class="brand-img">
+                        <!-- <img class="img-responsive header_text_img" srcset="/images/Header_icon.svg"  height="100" width="100" alt=""> -->
+                    </div>
+                    <h1 class="hidden-xs">خدمة التصميم<br />الداخلي للمنزل<h1>
+                            <h1 class="visible-xs">خدمة التصميم<br />الداخلي للمنزل<h1>
+                                    <h2 class="hidden-xs">من مرحلة التخطيط إلى التنفيذ، سيقوم فريق التصميم الداخلي في هوم
+                                        سنتر من تحويل منزل أحلامك إلى حقيقة.</h2>
+                                    <h2 class="visible-xs">من مرحلة التخطيط إلى التنفيذ، سيقوم فريق</br> التصميم الداخلي في
+                                        هوم سنتر من تحويل منزل</br> أحلامك إلى حقيقة.</h2> <a href="#what-services"
+                                        class="btn upper">اعرف المزيد</a>
+                </div>
+                <div class="header_form id-form col-sm-6 col-xs-12">
+                    <div class="form_title text-center">
+                        <h2>سجّل الآن لتحصل على تصميم <br>داخلي يناسب احتياجاتك!</h2>
+                    </div>
+                    <form id="form_id" method="POST" action="" enctype="multipart/form-data">
+                        <div id="signup-name" class="title_1 row">
+                            <div class="labels"> الاسم: </div>
+                            <div class="inputs"> <input type="text" autocomplete="off" name="name" id="lms-name-add"
+                                    class="name store" /><br />
+                                <!-- <p id="name-error" class="error" style="color:red;text-align:left;display:none">This field is mandatory.</p> -->
+                            </div>
+                        </div>
+                        <div id="signup-email" class="title_1 row">
+                            <div class="labels"> الايميل </div>
+                            <div class="inputs"> <input type="text" autocomplete="off" name="email" id="lms-email-add-form"
+                                    class="email store" /><br />
+                                <!-- <p id="email-error" class="error" style="color:red;text-align:left;display:none">This field is mandatory.</p>
+    		          <p id="email-error_2" class="error" style="color:red;text-align:left;display:none">You have already subscribed.</p>
+    		          <p id="email-error_3" class="error" style="color:red;text-align:left;display:none">Please enter correct format.</p> -->
+                            </div>
+                        </div>
+                        <div id="signup-phone" class="title_1 row">
+                            <div class="labels"> رقم الهاتف المتحرك: </div>
+                            <div class="inputs"> <input type="tel" name="phone" class="phone store" id="lms-mobile-add" />
+                                <!-- <p id="mobile-error" class="error" style="color:red;text-align:left;display:none">This field is mandatory.</p>  
+    	          <p id="mobile-error_2" class="error" style="color:red;text-align:left;display:none"> Please enter correct format.</p> -->
+                            </div>
+                        </div>
+                        <div id="signup-city" class="title_1 row">
+                            <div class="labels"> </div>
+                            <div class="inputs">
+                                <div class="col-xs-4" style="display : none;"> <input type="radio" name="city"
+                                        value="Dubai"> <span class="span_city">دبي</span> </div>
+                                <div class="col-xs-8" style="display : none;"> <input type="radio" name="city"
+                                        value="Abu Dhabi"> <span class="span_city">ابوظبي</span> </div>
+                            </div>
+                        </div>
+                        <div id="interested_in" class="title_1 row" style="display:none;">
+                            <div class="labels"> الاهتمام: </div>
+                            <div class="inputs">
+                                <div class="store_consultation_div"> <input type="radio" name="interested_in"
+                                        value="Store Consultation"> <span class="store_consultation radio_tab"> استشارة من
+                                        المتجر </span> </div>
+                                <div class="design_solution_div"> <input type="radio" name="interested_in"
+                                        value="Design Solution"> <span class="design_solution radio_tab"> حلول التصميم
+                                    </span> </div>
+                                <div class="modular_storage_div"> <input type="radio" name="interested_in"
+                                        value="Modular Storage"> <span class="modular_storage radio_tab"> وحدات التخزين
+                                    </span> </div>
+                            </div>
+                        </div> <input type="hidden" name="language" value="ar"> <input type="hidden" name="territory"
+                            value="om">
+                        <div id="signup-submit" class="title_4  text-center"> <input type="submit" value='تقديم'
+                                id="notify-submit-form" class="submitform" /> </div>
+                        <p id="email-error_2" class="error" style="color:#D7244C;text-align:left;display:none"> You have
+                            already subscribed. </p>
+                        <div id="success" class="thank_you text-center" style="color:#B8D64D;display:none"> <a id="success1"
+                                href="#" class="thank_you" data-toggle="modal" data-target="#myModal2"></a> </div>
+                        <!-- <div id="success" class="thank_you text-center" style="color:#B8D64D;display:none">
+              	<p><strong>شكرًا. سنخبرك.</strong></p>
+            	</div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--What do we offer section   -->
+        <div class="container what_services">
+            <div class="col-xs-12" id="what-services">
+                <h2 class="title text-center"> خدماتنا </h2>
+            </div>
+            <div class="col-xs-12 what_offer_section">
+                <div class="col-sm-3 col-xs-12 what_offer what_offer_1 text-center">
+                    <div class="">
+                        <picture>
+                            <source srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_1_hc_interior_design_desk"
+                                media="(min-width:768px)">
+                            <source srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_mob_1_hc_interior_design_mob"
+                                media="(max-width:767px)"> <img class="img-responsive what_offer_img"
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_1_hc_interior_design_desk" alt="">
+                        </picture>
+                    </div>
+                    <div class="offer_icon">
+                        <!-- <img class="img-responsive what_offer_icon" srcset="/images/Interior_Design.svg"  height="43" width="34" alt=""> -->
+                    </div>
+                    <div class="">
+                        <h3>الاستشارات</h3>
+                    </div>
+                    <div class="desc">
+                        <p>تصميم المساحة التي طالما حلمت بها أصبح أسهل من أي وقت مضى. تواصل مع مصممي الديكور لدينا للحصول
+                            على استشارات ونصائح خاصة.</p>
+                    </div>
+                    <!-- 				<div class="cta text-center">
+    					<span class="btn upper" href="">تواصل معنا</span>
+    				</div>	 -->
+                </div>
+                <div class="col-sm-3 col-xs-12 what_offer what_offer_2 text-center what_offer_middle">
+                    <div class="">
+                        <picture>
+                            <source srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_2_hc_interior_design_desk"
+                                media="(min-width:768px)">
+                            <source srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_mob_2_hc_interior_design_mob"
+                                media="(max-width:767px)"> <img class="img-responsive what_offer_img"
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_2_hc_interior_design_desk" alt="">
+                        </picture>
+                    </div>
+                    <div class="offer_icon">
+                        <!-- <img class="img-responsive what_offer_icon" srcset="/images/Modular_Storage.svg" height="41" width="35" alt=""> -->
+                    </div>
+                    <div class="">
+                        <h3>التصميم الداخلي</h3>
+                    </div>
+                    <div class="desc">
+                        <p>نعتني بديكور منزلك بالكامل بدءًا من الفكرة والتصور حتى التنفيذ. </p>
+                    </div>
+                    <!-- <div class="cta text-center">
+    					<span class="btn upper" href="">تواصل معنا</span>
+    				</div> -->
+                </div>
+                <div class="col-sm-3 col-xs-12 what_offer what_offer_3 text-center">
+                    <div class="">
+                        <picture>
+                            <source srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_3_hc_interior_design_desk"
+                                media="(min-width:768px)">
+                            <source srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_mob_3_hc_interior_design_mob"
+                                media="(max-width:767px)"> <img class="img-responsive what_offer_img"
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_3_hc_interior_design_desk" alt="">
+                        </picture>
+                    </div>
+                    <div class="offer_icon">
+                        <!-- <img class="img-responsive what_offer_icon" srcset="/images/Furniture_Home_Décor.svg" height="36" width="69" alt=""> -->
+                    </div>
+                    <div class="">
+                        <h3>حلول مخصّصة</h3>
+                    </div>
+                    <div class="desc">
+                        <p>نقدم لك تشكيلة من خزائن الملابس، الأرائك، والأسرّة التي يمكن تصميمها لتلبية احتياجاتك.</p>
+                    </div>
+                    <!--<div class="cta text-center">
+    					<span class="btn upper" href="">تواصل معنا</span>
+    				</div> -->
+                </div>
+                <div class="col-sm-3 col-xs-12 what_offer what_offer_4 text-center">
+                    <div class="da">
+                        <picture>
+                            <source srcset="https://homecentre.a.bigcontent.io/v1/static/DA_hc_interior_design_desk" media="(min-width:768px)">
+                            <source srcset="https://homecentre.a.bigcontent.io/v1/static/DA-Mob_hc_interior_design_mob"
+                                media="(max-width:767px)"> <img class="img-responsive what_offer_img"
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/DA_hc_interior_design_desk" alt="">
+                        </picture>
+                    </div>
+                    <div class="offer_icon">
+                        <!-- <img class="img-responsive what_offer_icon" srcset="/images/delivery_assembly_icon.svg" height="36" width="69" alt=""> -->
+                    </div>
+                    <div class="">
+                        <h3>التوصيل والتركيب</h3>
+                    </div>
+                    <div class="desc">
+                        <p>لراحتك ورفاهيتك، فريقنا المتخصص والمحترف يحوّل أحلامك إلى حقيقة.</p>
+                    </div>
+                    <!-- <div class="cta text-center">
+    			<span class="btn upper" href="">تواصل معنا</span>
+    			</div>	 -->
+                </div>
+            </div>
+        </div>
+        <!--How does it work-->
+        <div class="how_does_it_work">
+            <div class="container">
+                <div class="col-xs-12">
+                    <div class="col-xs-12 text-center">
+                        <h2 class="title">كيف تحصل على الخدمة؟</h2>
+                    </div>
+                    <ul class="col-xs-12 text-center nav nav-tabs">
+                        <li class="col-xs-4  active"> <a data-toggle="tab" href="#tab_1">
+                                <div class="Consultation">
+                                    <!-- <img class="img-responsive icon" srcset="/images/Collaboration.svg"  height="70" width="85" alt=""> -->
+                                </div>
+                                <h3>الاستشارة</h3>
+                            </a> </li>
+                        <li class="col-xs-4 "> <a data-toggle="tab" href="#tab_2">
+                                <div class="Execution">
+                                    <!-- <img class="img-responsive icon exe" srcset="/images/Execution.svg"  height="74" width="73" alt=""> -->
+                                </div>
+                                <h3>التنفيذ</h3>
+                            </a> </li>
+                        <li class="col-xs-4 "> <a data-toggle="tab" href="#tab_3">
+                                <div class="Installation">
+                                    <!-- <img class="img-responsive icon del" srcset="/images/Delivery.svg"  height="67" width="58" alt=""> -->
+                                </div>
+                                <h3>التركيب</h3>
+                            </a> </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab_1" class="col-xs-12 tab-pane fade in active">
+                            <div class="visible-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_1_hc_interior_design"
+                                    alt=""> </div>
+                            <div class="col-sm-6 col-xs-12 work_desc">
+                                <p> استمتع باستشارة مجانية داخل المتجر مع أحد مصممي الديكور لدينا لمناقشة احتياجاتك وتلبية
+                                    طموحاتك في فرش منزل أحلامك.</p><br />
+                                <p> عندما تكون مستعد، حدّد موعدًا لاستشارة منزلية لمصمّم الديكور الخاص بك لإجراء دراسة
+                                    تفصيلية للمكان على أرض الواقع.</p><br />
+                            </div>
+                            <div class="col-xs-6 hidden-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_1_hc_interior_design"
+                                    alt=""> </div>
+                        </div>
+                        <div id="tab_2" class="col-xs-12 tab-pane fade">
+                            <div class="visible-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_3_hc_interior_design"
+                                    alt=""> </div>
+                            <div class="col-sm-6 col-xs-12 work_desc">
+                                <p> في هذه المرحلة ستتمكن من رؤية أفكارك تتحول إلى حقيقة. سنقدم لك تصميم أرضي ثنائي الأبعاد
+                                    لفهم تصميم وتنسيق الأثاث، كما تتيح لك لوحة الإلهام تصور النتيجة، وكذلك عرض الأسعار
+                                    التفصيلية لجميع المنتجات.</p>
+                            </div>
+                            <div class="col-xs-6 hidden-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_3_hc_interior_design"
+                                    alt=""> </div>
+                        </div>
+                        <div id="tab_3" class="col-xs-12 tab-pane fade">
+                            <div class="visible-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_2_hc_interior_design"
+                                    alt=""> </div>
+                            <div class="col-sm-6 col-xs-12 work_desc">
+                                <p> سنقوم بعملية التوصيل والتركيب. سيتواجد مصمم الديكور لضمان وضع وتركيب الأثاث وفقًا للخطة
+                                    المتفق عليها. يضمن لك المصمم تنفيذ ما تم التخطيط له، تمامًا كما تخيلت. </p>
+                            </div>
+                            <div class="col-xs-6 hidden-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_2_hc_interior_design"
+                                    alt=""> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Why collaborate with us -->
+        <div class="why_collaborate" style="display:none;">
+            <div class="container">
+                <div class="col-xs-12 first_block">
+                    <h2 class="title text-center"> لماذا تحتاج إلى التعاون معنا؟ </h2>
+                </div>
+                <div class="col-xs-12 second_block">
+                    
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default professional"> <a data-toggle="collapse"
+                                    data-parent="#accordion" href="#collapse1">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">استشارات تصميم احترافية </h3>
+                                    </div>
+                                </a>
+                                <div id="collapse1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p> سيقوم خبراء التصميم لدينا بالاجتماع معك. سيكون باستطاعتهم تقديم نظرة شاملة عن
+                                            المشروع مما يمكنك من اتخاذ قرارات صحيحة تناسب احتياجاتك. يمكنك احضار أي صورة أو
+                                            فكرة تعجبك، وسنقوم بالعمل معك لوضع تصميم رقمي. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default home"> <a data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapse2">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">زيارات منزلية </h3>
+                                    </div>
+                                </a>
+                                <div id="collapse2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p> يمكنك ببساطة تحديد موعد وسيقوم خبير التصميم بزيارة منزلك ليقدم لك الاستشارة
+                                            اللازمة. في الوقت نفسه، سيتمكن الخبير من أخذ القياسات، تسجيل أي من الملاحظات
+                                            التقنية والاستفادة من أي تفصيل قد يساعد في تجسيد أفكارك وتخيلاتك. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default end_to_end"> <a data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapse3">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">خدمة متكاملة </h3>
+                                    </div>
+                                </a>
+                                <div id="collapse3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p> تشمل خدماتنا جميع متطلبات التصميم الداخلي، من مرحلة التخطيط وحتى تسليم المشروع.
+                                            سيكون الاستشاري الخاص بنا هو نقطة التواصل الوحيدة ليقوم بإرشادك في كل خطوة،
+                                            الإجابة على كل أسئلتك والمحافظة على سير المشروع بشكل سلس من البداية حتى النهاية.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default augmented"> <a data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapse4" aria-expanded="true">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"> الواقع المعزز </h3>
+                                    </div>
+                                </a>
+                                <div id="collapse4" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p> من خلال ميزة الواقع المعزز AR، ستتمكن من مشاهدة كيف يبدو أي منتج في الغرفة قبل
+                                            أن تشتريه. وستقوم قدرتك على تخيّل التصميم بمساعدتك في الحصول على تصميم مخصص
+                                            لأجلك. سنقوم بإنشاء مخطط ثنائي الأبعاد للمنزل للتأكد من تواجد كل قطعة في مكانها
+                                            الصحيح. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FAQ section-->
+        <div class="faq">
+            <div class="container">
+                <div class="col-xs-12 text-center">
+                    <p class="faq-sec-1"> دعنا نعمل سويًا لتحويل بيتك إلى</br>منزل أحلامك. </p>
+                    <p class="faq-sec-2"> هل لديك أية أسئلة؟</br>اطلع على صفحة <a href="#" class="faq-list"
+                            data-toggle="modal" data-target="#myModal">الأسئلة الشائعة.</a> </p>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">الأسئلة الشائعة.</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="add">
+                            <div class="h3">خدمات التصميم الداخلي للمنزل من هوم سنتر</div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_1">
+                                    <p>ما هي خدمة التصميم الداخلي؟</p>
+                                </a>
+                                <div id="faq_1" class="faq-body collapse">
+                                    <p>خدمة التصميم الداخلي هي خدمة تصميم داخلي كاملة. نقدّم:</p>
+                                    <ul>
+                                        <li>تصميم داخلي</li>
+                                        <li>وحدات خزائن ملابس</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_2">
+                                    <p>لماذا يفضّل أن أصمم منزلي باستخدام خدمة التصميم الداخلي؟</p>
+                                </a>
+                                <div id="faq_2" class="faq-body collapse">
+                                    <p>كروّاد في مجال المنزل والأثاث، لا أحد على علم بكافة ما يخص المنازل أكثر منا! فلقد
+                                        قدمنا خدماتنا لملايين العملاء في جميع أنحاء الشرق الأوسط ونلنا رضاهم. وتعتمد خدمات
+                                        التصميم الداخلي للمنزل من هوم سنتر على خبرة ومهارة فريق التصميم في هوم سنتر ومعرفته
+                                        بالعملاء الإقليميين لتقديم خدمة تصميم داخلي شاملة.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_3">
+                                    <p>ما هي المزايا التي تتفوق بها خدمات التصميم الداخلي للمنزل من هوم سنتر على غيرها من
+                                        مصممي الديكور الداخلي والمقاولين؟</p>
+                                </a>
+                                <div id="faq_3" class="faq-body collapse">
+                                    <p>الكثير! فخدماتنا شاملة، ونحن نحرص على تلبية جميع احتياجاتك المتعلقة بالتصميم الداخلي
+                                        من البداية إلى النهاية. حيث سيكون الاستشاري الخاص بنا هو نقطة التواصل الوحيدة ليقوم
+                                        بإرشادك في كل خطوة، الإجابة على كل أسئلتك والمحافظة على سير المشروع بشكل سلس من
+                                        البداية حتى النهاية.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_4">
+                                    <p>رسوم التصميم القابلة للاسترداد كالتالي:</p>
+                                </a>
+                                <div id="faq_4" class="faq-body collapse">
+                                    <p>استوديو أو شقة من غرفة نوم: 799 درهم</br> يمكنك استرداد هذا المبلغ إذا بلغت مشترياتك
+                                        في هوم سنتر 5,000 درهم </br> شقة من غرفتي نوم: 1,499 درهم</br> يمكنك استرداد هذا
+                                        المبلغ إذا بلغت مشترياتك في هوم سنتر 13,000 درهم </br> شقة من 3 غرف نوم: 2,999
+                                        درهم</br> يمكنك استرداد هذا المبلغ إذا بلغت مشترياتك في هوم سنتر 25,000 درهم </p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_5">
+                                    <p>هل تتوفر هذه الخدمة في جميع متاجرنا في الإمارات العربية المتحدة؟</p>
+                                </a>
+                                <div id="faq_5" class="faq-body collapse">
+                                    <p>نعم، الخدمة متوفرة في جميع المتاجر بالإمارات بناءً على ترتيب مسبق.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_6">
+                                    <p>كيف يمكنني الاستمتاع بخدمات التصميم لديكم؟</p>
+                                </a>
+                                <div id="faq_6" class="faq-body collapse">
+                                    <p>الأمر بسيط جدًا. ما عليك سوى حجز استشارة تصميم من الأعلى للبدء. كما نحبّذ أيضًا أن
+                                        يكون لديك مخطط للمنزل.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_7">
+                                    <p>هل تقومون بزيارات إلى المنزل لتقديم الاستشارات؟</p>
+                                </a>
+                                <div id="faq_7" class="faq-body collapse">
+                                    <p>نعم.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_8">
+                                    <p>ماذا تشمل الاستشارات؟</p>
+                                </a>
+                                <div id="faq_8" class="faq-body collapse">
+                                    <p>التقِ بمصمم الديكور الخاص بك: </br> تحدث معه عن احتياجاتك، وسيقوم بدوره بمساعدتك
+                                        وإرشادك وفقًا للمساحة، الأثاث، الاكسسوارات، الجودة، والميزانية. </br></br> اكتشف
+                                        مجموعة مختارة من المواد: </br> شاهد وتعرّف على خامات وجودة المواد في مكانٍ واحد.
+                                        </br></br> شاهد الأثاث والديكور:</br> شاهد بنفسك عن قرب داخل المتجر تشكيلة رائعة من
+                                        الأثاث والديكور لتكوين أفضل تصور من خلال الخيارات المتاحة. </br></br> الواقع
+                                        الافتراضي: نحن نقدم لك تجربة الواقع الافتراضي (VR) الذي يسمح لك بمعاينة المظهر الذي
+                                        سيبدو عليه منزلك بمجرد الانتهاء من التخطيط.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_9">
+                                    <p>هل أحتاج إلى حجز موعد لتلقي خدمات التصميم الداخلي للقطاع للمنزل من هوم سنتر؟</p>
+                                </a>
+                                <div id="faq_9" class="faq-body collapse">
+                                    <p>نعم، عليك القيام بحجز موعد والحصول على استشارة أولية داخل المتجر.<br> إذا كنت ترغب
+                                        بالاستمرار في الخدمة، يمكنك حجز زيارة منزلية مع مصمم الديكور مقابل رسوم مستحقة الدفع
+                                        في المتجر.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_10">
+                                    <p>ما هي الضمانات والكفالات المقدمة على المنتجات؟</p>
+                                </a>
+                                <div id="faq_10" class="faq-body collapse">
+                                    <p>تأتي جميع منتجاتنا مع ضمانات لفترات مختلفة، ويمكنك الاطلاع على تفاصيلها على صفحة
+                                        المنتجات لدينا.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_11">
+                                    <p>هل سأحصل على بطاقة ضمان؟</p>
+                                </a>
+                                <div id="faq_11" class="faq-body collapse">
+                                    <p>تتوفر بطاقة الضمان على المراتب فقط. سيتم ذكر جميع ضمانات المنتجات الأخرى في الفاتورة.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="h3 h3-top">خزانة مركّبة</div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_12">
+                                    <p>ما هو الأثاث المركّب؟</p>
+                                </a>
+                                <div id="faq_12" class="faq-body collapse">
+                                    <p>الأثاث المركّب هو الأثاث الذي يتم تخصيصه ليناسب متطلباتك. حيث يتم تصنيعه في المصانع
+                                        باستخدام تقنية متقدمة، وهو بشكل عام مصنوع من الخشب الصناعي، ويتميز بسهولة تركيبه
+                                        وبتشطيبه الرائع.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_13">
+                                    <p>ما هي الوحدات المركّبة التي يمكنكم صنعها؟</p>
+                                </a>
+                                <div id="faq_13" class="faq-body collapse">
+                                    <p>نحن نقدم خزائن مركّبة، خزائن بأبواب انزلاقية وخزائن للأحذية، حلول تخزين لغرف الأطفال
+                                        وغرف الجلوس، وأرائك.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_14">
+                                    <p>هل سيتم تصنيع الأثاث المركّب في الموقع؟</p>
+                                </a>
+                                <div id="faq_14" class="faq-body collapse">
+                                    <p>جميع الأثاث المركّب لدينا مصنوع بالكامل في المصنع. وسيتم تسليم الأثاث إلى باب منزلك
+                                        في صناديق مسطحة. حيث يتم التركيب والتثبيت فقط في الموقع.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_15">
+                                    <p>كيف يتم نقل الأثاث المركّب لديكم؟</p>
+                                </a>
+                                <div id="faq_15" class="faq-body collapse">
+                                    <p>سيقوم أسطول المركَبات لدينا بتوصيل الأثاث المركّب إلى منزلك، مباشرة من المستودع.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_16">
+                                    <p>ما هو الضمان على الأثاث المركّب؟</p>
+                                </a>
+                                <div id="faq_16" class="faq-body collapse">
+                                    <p>يأتي الأثاث المركّب مع ضمان ضد عيوب التصنيع لفترة لا تقل عن سنتين.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_17">
+                                    <p>ماذا يشمل الضمان؟</p>
+                                </a>
+                                <div id="faq_17" class="faq-body collapse">
+                                    <p>يغطي الضمان عيوب التصنيع في الأعمال الخشبية.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_18">
+                                    <p>من سيقوم بتنفيذ عمليات التثبيت/التركيب؟</p>
+                                </a>
+                                <div id="faq_18" class="faq-body collapse">
+                                    <p>لدينا فريق من الفنيين المدربين الذين سيقومون بتركيب وتثبيت أثاثك المركّب.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_19">
+                                    <p>من الذي يمكنني الاتصال به في حالة وجود مشكلة في أثاثي المركب بعد تركيبه وتثبيته؟</p>
+                                </a>
+                                <div id="faq_19" class="faq-body collapse">
+                                    <p>يرجى الاتصال بقسم خدمة العملاء للإبلاغ عن أي مشاكل تطرأ بعد التثبيت. كما يمكنك
+                                        الاتصال بمستشار التصميم الداخلي الخاص بك.</p>
+                                </div>
+                            </div>
+                            <div class="h3 h3-top">التصميم الداخلي والبناء</div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_20">
+                                    <p>هل يمكنكم تجديد منزلي الحالي؟</p>
+                                </a>
+                                <div id="faq_20" class="faq-body collapse">
+                                    <p>لا، يجب تجهيز المنزل للتصميم والتركيب من هوم سنتر. نحن لا نقوم بإزالة الأثاث الموجود
+                                        أو نقله.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_21">
+                                    <p>هل يمكنني شراء المواد بنفسي من خلال مجموعة الموردين الخاصة بي؟</p>
+                                </a>
+                                <div id="faq_21" class="faq-body collapse">
+                                    <p>نقدم التشكيلة الموجودة في هوم سنتر. نحن لا نقدم أثاث واكسسوارات مفصّلة أو حسب الطلب.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_22">
+                                    <p>ما هي المؤهلات التي يتمتع بها مصممو الديكور لديكم؟</p>
+                                </a>
+                                <div id="faq_22" class="faq-body collapse">
+                                    <p>جميع المصممين لدينا هم عبارة عن مصممين داخليين مؤهلين من معاهد رائدة، ولديهم سجل حافل
+                                        بالعمل مع شركات شهيرة.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_23">
+                                    <p>ماذا أتوقع من مصمم الديكور؟</p>
+                                </a>
+                                <div id="faq_23" class="faq-body collapse">
+                                    <p>ستلتقي بمصمم الديكور الخاص بنا لمناقشة وفهم متطلباتك وميزانيتك، وتحديد زيارة للمكان،
+                                        وإعداد مقترحين للتصميم وإرشادك خلال عملية الشراء. سيتواجد مصمم الديكور في المكان عند
+                                        التسليم لضمان الدقة والتنفيذ وفقًا لما تم الاتفاق عليه.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_24">
+                                    <p>هل يمكنني اقتراح تغييرات في التصميم بعد تأكيد الطلب؟</p>
+                                </a>
+                                <div id="faq_24" class="faq-body collapse">
+                                    <p>بمجرد تأكيد الطلب، لن تتمكن من تغيير المتطلبات. ومع ذلك، سيكون مستشار التصميم الخاص
+                                        بك قادرًا على توجيهك بشكل أفضل في هذا الشأن.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_25">
+                                    <p>هل سأحصل على تحديثات منتظمة حول سير المشروع؟</p>
+                                </a>
+                                <div id="faq_25" class="faq-body collapse">
+                                    <p>بمجرد بدء المشروع، سنخبرك بخطة المشروع، متبوعة بتحديثات منتظمة.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_26">
+                                    <p>من سيقوم بعملية التثبيت لمشروعي؟</p>
+                                </a>
+                                <div id="faq_26" class="faq-body collapse">
+                                    <p>سيتم تسليم الأثاث والديكور المنزلي وتركيبهم من قبل فريقنا. إلا أننا لا نقوم بتركيب
+                                        المصابيح المعلقة، الثريات، مرايا وديكورات الحائط. يمكن تعيين طرف ثالث خارجي للتنفيذ
+                                        تحت إشراف مصمم الديكور لدينا. لا تتحمل هوم سنتر مسؤولية التسعير المتعلقة بالطرف
+                                        الثالث.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_27">
+                                    <p>كم من الوقت يستغرق إكمال التصاميم؟</p>
+                                </a>
+                                <div id="faq_27" class="faq-body collapse">
+                                    <p>سيكون التصميم الأولى جاهزًا للمراجعة بعد 7 أيام من زيارة المصممين إلى منزلك.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="add">
+                            <h2><strong>شكرًا. سنخبرك.</strong></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="homecentreom_script.js"></script>
+    <link rel="stylesheet" href="hc-style-ar.min.css">
+</body>
+</html>

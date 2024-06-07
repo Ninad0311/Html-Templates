@@ -1,0 +1,8 @@
+{
+  "headboard": {
+    "curve": { "desk_img": "Curve-qa-om_brown_hc_colette_bedroom_desk_om", "mob_img": "Curve-qa-om_brown_hc_colette_bedroom_mob_om", "item_code": "162586977" },
+    "straight": { "desk_img": "Straight-qa-om_brown_hc_colette_bedroom_desk_om", "mob_img": "Straight-qa-om_brown_hc_colette_bedroom_mob_om", "item_code": "162586378" },
+    "wing": { "desk_img": "Wing-qa-om_brown_hc_colette_bedroom_desk_om", "mob_img": "Wing-qa-om_brown_hc_colette_bedroom_mob_om", "item_code": "162586944" }
+  },
+  "base": { "only-base": { "desk_img": "King-Base-Only-qa-om_brown_hc_colette_bedroom_desk_om", "mob_img": "King-Base-Only-qa-om_brown_hc_colette_bedroom_mob_om", "item_code": "162585208" } }
+}

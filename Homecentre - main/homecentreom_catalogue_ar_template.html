@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue</title>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.c1.amplience.net/c/homecentre/slick-theme">
+    <link rel="stylesheet" type="text/css" href="https://cdn.c1.amplience.net/c/homecentre/slick">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.c1.amplience.net/c/homecentre/slick_js"></script>
+    <script src="https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/hash.js?v11612256620"></script>
+</head>
+
+<body>
+    <!-- contain main informative part of the site -->
+    <main role="main" class="language-ar catalogue-main" id="main-part"> <!-- brands section -->
+        <div class="brands-section" id="brands-section"><!-- brands heading -->
+            <div class="container-fluid" id="brands-section-container">
+                <div class="headingBrandInner">
+                    <h1 id="brands-section-heading">كتالوجات هوم سنتر</h1>
+                    <p class="intro-text">تساعدك كتالوجاتنا على اختيار المنتجات المناسبة لك بكل سهولة.</p>
+                </div>
+                <hr />
+                <!-- catalog -->
+                <ul class="catalog" id="catalog">
+                    &nbsp;
+                </ul>
+            </div>
+        </div>
+    
+        <div id="catalogue-details" style="display:none;">
+            <div id="canvas">
+                <!-- <div class="zoom-icon zoom-icon-in"></div> -->
+                <div class="magazine-viewport">
+                    <div class="container">
+                        <!-- <div class="magazine">
+                <div ignore="1" class="next-button"></div>
+                <div ignore="1" class="previous-button"></div>
+              </div> -->
+                    </div>
+                </div>
+            </div> <!--canvas end -->
+            <!-- Pagination Start -->
+            <!-- <div id="progress_indicator">
+            <div class="first-page"></div>
+            <span class="current-page">
+              <span class="pagination"></span>
+              <span class="separator">/</span>
+              <span class="totalPages"></span>
+            </span>
+            <div class="last-page"></div>
+          </div> -->
+            <!-- Pagination End -->
+            <span class="flipbook-prev"></span>
+            <span class="flipbook-next"></span>
+            <div id="results" class="container pub">
+    
+                <!-- <div id="video-modal0" class="modal fade popup" role="dialog">
+            <div class="modal-dialog">
+              <div id="popup_content" style="transform: scale(1);" class="modal-content">
+                <button id="popup_close_1" type="button" class="closed" data-dismiss="modal"></button>
+                <div class="modal-body products-view reader-view active compact" id="video_box">
+                  <div class="product-details"></div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+    
+            </div>
+            <div class="flip-page-container">
+                <div class="flip-page hidden-xs" style="visibility: hidden;">اقلب الصفحة</div>
+            </div>
+            <!-- <div class="downPdf visible-xs"><a class="cta" id="downloadPDF" data-text="Download PDF" href="/images/pdf/OUTDOOR UAE ENGLISH - Home Centre Outdoor Catalogue 2020 UAE English.pdf" target="_blank" download></a></div> -->
+            <div class="downPdf visible-xs"><a class="cta" id="downloadPDF" data-text="Download PDF" href="" target="_blank"
+                    download>تحميل PDF</a></div>
+        </div>
+    </main>
+    
+    <link rel="stylesheet" type="text/css" href="https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/css/catalogue.css" />
+    <script type="text/javascript">
+        var catalogs = new Array();
+        var catalog_url_fragments = new Array();
+        var isConceptDelivery = "";
+        var customerLocationInformation = '';
+        var customerLocationInformationArea = '';
+        var customerLocationInformationRegionCode = '';
+        var isMobile = false;
+        var appView = 0;
+        var appViewData = 0;
+        var _App = 0;
+        var catCountry = 'om';
+        var catLang = 'ar';
+        var siteUrl = 'https://uat1.homecentre.com/om/ar';
+        var catalogsTitle = '';
+        var prod_id = '';
+        var catalogPDF_url = '';
+        var catalogPDF_utm = '';
+
+        // function lms_static_content() {
+            $(document).ready(function () {
+            // window.setTimeout(function() {
+            /*$.getScript( "https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/modernizr.js?v11613054780", function( data, textStatus, jqxhr ) {   
+              yepnope({   
+                test: Modernizr.csstransforms,
+                yep: ["https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/turn.js?v11612256616"],
+                both: ["https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/zoom.js?v11612256616", "https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/magazine.js?v11615822028", "https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/css/magazine.css?v11613653602"],
+                // complete: loadApp
+              });
+            });*/
+            // }, 1000);
+
+            $.getScript("https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/modernizr.js?v11613054780", function (data, textStatus, jqxhr) {
+                $.getScript("https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/turn.js?v11612256616", function (data, textStatus, jqxhr) {
+                    $.getScript("https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/zoom.js?v11612256616", function (data, textStatus, jqxhr) {
+                        $.getScript("https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/magazine.js?v11615822028", function (data, textStatus, jqxhr) {
+                            // show_catalog_new(self.id.split('-')[2]);
+                        });
+                    });
+                });
+            });
+            $.ajax({
+                url: 'https://uatwww2.homecentre.com/ecomm/sites/ecomm/files/lms/catalogue_om_ar.json',
+                cache: false,
+                type: 'GET',
+                dataType: 'json',
+            })
+                .done(function (catalogue_data) {
+
+                    //catalogs = catalogue_data;
+                    li_content = '';
+                    $.each(catalogue_data, function (node) {
+                        catalog_url_fragments.push(catalogue_data[node].field_url_fragment_value + '/' + catalogue_data[node].nid);
+                        li_content += '<li id="catalog-item-' + catalogue_data[node].nid + '">';
+                        /*if(catalogue_data[node].field_url_fragment_value == 'open_new_tab'){
+                          li_content += '<a href="'+ catalogue_data[node].embed_value +'" target = "_blank" alt="' + catalogue_data[node].title + '"><img id="catalog-img-' + catalogue_data[node].nid + '" alt="' + catalogue_data[node].title + '" src="' + catalogue_data[node].image + '" /><div class="descr" id="catalog-description-' + catalogue_data[node].nid + '"><h2 id="catalog-title-' + catalogue_data[node].nid + '" >' + catalogue_data[node].title + '</h2><p id="catalog-text-' + catalogue_data[node].nid + '" >' + catalogue_data[node].description + '</p></div></a>';
+                        }else{
+                          li_content += '<a href="'+ catalogue_data[node].embed_value +'" target = "_blank" alt="' + catalogue_data[node].title + '"><img id="catalog-img-' + catalogue_data[node].nid + '" alt="' + catalogue_data[node].title + '" src="' + catalogue_data[node].image + '" /><div class="descr" id="catalog-description-' + catalogue_data[node].nid + '"><h2 id="catalog-title-' + catalogue_data[node].nid + '" >' + catalogue_data[node].title + '</h2><p id="catalog-text-' + catalogue_data[node].nid + '" >' + catalogue_data[node].description + '</p></div></a>';
+                        }*/
+                        /*if(catalogue_data[node].field_url_fragment_value == 'open_new_tab'){
+                          li_content += '<a alt="' + catalogue_data[node].title + '"><img id="catalog-img-' + catalogue_data[node].nid + '" alt="' + catalogue_data[node].title + '" src="' + catalogue_data[node].image + '" /><div class="descr" id="catalog-description-' + catalogue_data[node].nid + '"><h2 id="catalog-title-' + catalogue_data[node].nid + '" >' + catalogue_data[node].title + '</h2><p id="catalog-text-' + catalogue_data[node].nid + '" >' + catalogue_data[node].description + '</p></div></a>';
+                        }else{
+                          li_content += '<a alt="' + catalogue_data[node].title + '"><img id="catalog-img-' + catalogue_data[node].nid + '" alt="' + catalogue_data[node].title + '" src="' + catalogue_data[node].image + '" /><div class="descr" id="catalog-description-' + catalogue_data[node].nid + '"><h2 id="catalog-title-' + catalogue_data[node].nid + '" >' + catalogue_data[node].title + '</h2><p id="catalog-text-' + catalogue_data[node].nid + '" >' + catalogue_data[node].description + '</p></div></a>';
+                        }*/
+
+                        if (catalogue_data[node].embed_value != '') {
+                            li_content += '<a href="' + catalogue_data[node].embed_value + '" target = "_blank" alt="' + catalogue_data[node].title + '"><img id="catalog-img-' + catalogue_data[node].nid + '" alt="' + catalogue_data[node].title + '" src="' + catalogue_data[node].image + '" /><div class="descr" id="catalog-description-' + catalogue_data[node].nid + '"><h2 id="catalog-title-' + catalogue_data[node].nid + '" >' + catalogue_data[node].title + '</h2><p id="catalog-text-' + catalogue_data[node].nid + '" >' + catalogue_data[node].description + '</p></div></a>';
+                        } else {
+                            li_content += '<a alt="' + catalogue_data[node].title + '"><img id="catalog-img-' + catalogue_data[node].nid + '" alt="' + catalogue_data[node].title + '" src="' + catalogue_data[node].image + '" /><div class="descr" id="catalog-description-' + catalogue_data[node].nid + '"><h2 id="catalog-title-' + catalogue_data[node].nid + '" >' + catalogue_data[node].title + '</h2><p id="catalog-text-' + catalogue_data[node].nid + '" >' + catalogue_data[node].description + '</p></div></a>';
+                        }
+                        li_content += '</li>';
+                        //catalogs.[catalogue_data[node].nid] = new Array();
+                        catalogs[catalogue_data[node].nid] = { 'title': catalogue_data[node].title, 'embed_value': catalogue_data[node].embed_value };
+                        //catalogs[catalogue_data[node].nid.embed_value = catalogue_data[node].embed_value;
+                    });
+                    $('#catalog').html(li_content);
+
+                    $("#catalog li").click(function () {
+                        // var self = this;
+                        // show_catalog(this.id.split('-')[2]);
+                        //$('#catalog li').css('pointer-events', 'none');
+
+                        // show_catalog_new(this.id.split('-')[2]);
+
+                        if ($(this).children().attr('href') === undefined) {
+                            show_catalog_new(this.id.split('-')[2]);
+                        } else {
+                            // window.location.href = $(this).children().attr('href');
+                            window.open($(this).children().attr('href'), '_blank');
+                        }
+
+                    });
+                    if (window.location.hash) {
+                        var hash = window.location.hash.substring(1);
+
+                        $(catalog_url_fragments).each(function (key, value) {
+                            var result = value.split("/");
+
+                            if (result[0] == hash) {
+                                show_catalog(result[1]);
+                            }
+                        });
+
+                    }
+
+                    // window.setTimeout(function() {
+                    // let timerId = window.setInterval(
+                    /*$.getScript( "https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/modernizr.js?v11613054780", function( data, textStatus, jqxhr ) {
+                        yepnope({
+                          test: Modernizr.csstransforms,
+                          yep: ["https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/turn.js?v11612256616"],
+                          both: ["https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/zoom.js?v11612256616", "https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/magazine.js?v11615822028", "https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/css/magazine.css?v11613653602"],
+                          // complete: loadApp
+                        });
+                    });*/
+                    // , 2000);
+                    // }, 5000);
+                    // window.setTimeout(function() { clearInterval(timerId); }, 5000);
+
+                });
+        });
+        function catalogue_list() {
+            // $('.hmc2 .modal-backdrop.in:eq(1)').css('z-index','1040');
+            // $('.brands-section-1').addClass('brands-section').removeClass('brands-section-1');
+
+            $('#catalog').show();
+            $('#brands-section-container .row.heading').remove();
+            $('#brands-section .catalog-plugin').remove();
+        }
+
+        function show_catalog(id) {
+            var isMobile = false; //initiate as false
+            // device detection
+            if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
+                || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))) isMobile = true;
+
+            var frameheight = "805px";
+            if (isMobile) {
+                frameheight = "400px";
+            }
+
+            headline = '<div class="row heading"><div class="col-sm-3"><a href="javascript:;" class="back-to">عرض كل الكتالوجات</a></div><div class="col-sm-9 col-lg-6 text-center"><h2>' + catalogs[id].title + '</h2></div></div>';
+
+            // cat_detail = '<div class="catalog-plugin" id="catalog-plugin"><iframe border="0" frameborder="0" src="' + catalogs[id].embed_value + '" width="100%" height="'+ frameheight +'">Your browser does not support iframes</iframe></div>';
+            // cat_detail = '<div class="catalog-plugin" id="catalog-plugin"><iframe border="0" frameborder="0" src="https://uat1.homecentre.com/sa/en/TestCatalogue" width="100%" height="'+ frameheight +'">Your browser does not support iframes</iframe></div>';
+
+            // $('#catalog').before(headline);
+            // // $('#brands-section-container').after(cat_detail);
+
+            // $('#brands-section-container').after($('#catalog-plugin'));
+            // $('#catalog-plugin').show();
+            // $('.brands-section').addClass('brands-section-1').removeClass('brands-section');
+            // $('.hmc2 .modal-backdrop.in:eq(1)').css('z-index','10');
+            // $('#video-modal0').css('background','rgb(0,0,0,0.5)');
+
+            cat_detail = '<div class="catalog-plugin" id="catalog-plugin"><iframe border="0" frameborder="0" src="' + catalogs[id].embed_value + '" width="100%" height="' + frameheight + '">Your browser does not support iframes</iframe></div>'
+
+            $('#catalog').before(headline);
+            $('#brands-section-container').after(cat_detail);
+
+            $('#catalog').hide();
+            $("a.back-to").click(function () {
+                catalogue_list();
+            });
+
+        }
+    </script>
+    
+    
+    <!-- Catalogue 2021
+    <script src="/js/hash.js?v1"></script>
+     -->
+    <script type="text/javascript">
+        if (window.appData != undefined && window.appData.inAppWebview != undefined) {
+            appViewData = window.appData;
+            appView = window.appData.inAppWebview;
+        }
+        if (appViewData && appView) {
+            _App = 1;
+        }
+        /*var isApp = navigator.userAgent.indexOf('com.landmarkgroup.homecentre2');
+        var is_uiwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Version)/i.test(navigator.userAgent);
+        
+        if(isApp !== -1 ) {
+          $('#APP').html('IF:'+isApp+'--'+navigator.userAgent);
+        } else {
+          $('#APP').html('ELSE:'+isApp+'--'+navigator.userAgent);
+        }
+        console.log ('isApp:'+isApp+'--'+navigator.userAgent);*/
+    </script>
+    <script type="text/javascript">
+        function loadApp() {
+
+            $('#canvas').fadeIn(1000);
+            var flipbook = $('.magazine');
+            if (flipbook.width() == 0 || flipbook.height() == 0) {
+                setTimeout(loadApp, 10);
+                return;
+            }
+
+            //old width: 922 height: 600
+
+            if (window.innerWidth >= 820) {
+                var widthFlipbook = "922";
+                var heightFlipbook = "820";
+            } else {
+                //var widthFlipbook = (window.innerWidth - (window.innerWidth*10/100));
+                var widthFlipbook = (window.innerWidth);
+                /*if(window.innerHeight=="812"){
+        
+                          var heightFlipbook = "690"; 
+        
+                }else if(window.innerHeight <= "748"){
+                    var heightFlipbook = (window.innerWidth * 1.778630838); 
+                }else{
+                  var heightFlipbook = window.innerHeight;
+                          //var heightFlipbook = (window.innerHeight); 
+                }*/
+                var heightFlipbook = (window.innerWidth * 1.778630838);
+                // if(window.innerHeight=="812"){
+                //          /*height for Iphone X*/
+                //                  //var heightFlipbook = (window.innerHeight - (window.innerHeight*50/100));
+                //                var heightFlipbook = (window.innerHeight - (window.innerHeight*30/100));
+                //        }else{
+                //                var heightFlipbook = (window.innerHeight - (window.innerHeight*15/100));
+                //                  //var heightFlipbook = (window.innerHeight - (window.innerHeight*40/100));
+
+                //        }
+            }
+
+            flipbook.turn({
+                width: widthFlipbook,
+                height: heightFlipbook,
+                duration: 1000,
+                acceleration: true,//!isChrome(),
+                gradients: true,
+                autoCenter: false,
+                elevation: 50,
+                pages: 6,
+                when: {
+                    turned: function (event, page, view) {
+                        disableControls(page);
+                        disableOurControls(page);
+                        // $(this).turn('center');
+
+                        //Manoj start code 21-01-2021
+                        /*$(".pagination").empty();
+                        $(".totalPages").empty();
+                        $("#progress_indicator").removeClass("indicaterShift"); 
+                        var view =  $(this).turn("view").join(" - ");
+                    
+                        if(view == "0 - 1"){
+                          $(".last-page").removeClass("blackOpacity");
+                          $(".first-page").addClass("blackOpacity");
+                          $(".pagination").append("1");         
+                        }else if(view == "10 - 0"){
+                          $(".first-page").removeClass("blackOpacity");
+                          $(".last-page").addClass("blackOpacity");
+                          $("#progress_indicator").addClass("indicaterShift");
+                          $(".pagination").append("10"); 
+                        }else{
+                          $(".pagination").append(view);
+                        }
+                        var pages = $(this).turn("pages");
+                        $(".totalPages").append(pages);*/
+                        //end code
+
+                        if (page == 1) {
+                            // $(this).turn('peel', 'br');
+                            $(this).turn('peel', false);
+                            $(".flip-page").css('visibility', 'visible');//show();
+                        } else {
+                            $(".flip-page").css('visibility', 'hidden');//hide();
+                        }
+                    },
+                    start: function (event, pageObject, corner) {
+                        $('.magazine').turn('disable', true);
+                        /*if (corner != null) {
+                          //$('.magazine').turn('disable', true);
+                          event.preventDefault();
+                        }*/
+                        /*if (corner=="tl" || corner == 'tr' || corner=="bl" || corner=="br" ) {
+                          event.preventDefault();
+                          $(".magazine").mouseenter(function(){
+                            $('.magazine').turn('disable', true);
+                            console.log('mouseenter');
+                          });
+              
+                          $(".magazine").mouseleave(function(){
+                            $('.magazine').turn('disable', false);
+                            console.log('mouseleave');
+                          });
+              
+                          // $(".magazine").on('touchstart', function(){
+                          //   $('.magazine').turn('disable', true);
+                          //   console.log('touchstart');
+                          // });
+                        }*/
+
+                    },
+                }
+            });
+
+
+
+            $('.magazine-viewport').zoom({
+                flipbook: $('.magazine'),
+                max: function () {
+                    return largeMagazineWidth() / $('.magazine').width();
+                },
+                when: {
+                    swipeLeft: function () {
+                        // $(this).zoom('flipbook').turn('next');
+                        $('.magazine').turn('disable', false);
+                        if (catLang == 'ar') {
+                            $('.magazine').turn('previous');
+                        } else {
+                            $('.magazine').turn('next');
+                        }
+                    },
+                    swipeRight: function () {
+                        // $(this).zoom('flipbook').turn('previous');
+                        $('.magazine').turn('disable', false);
+                        if (catLang == 'ar') {
+                            $('.magazine').turn('next');
+                        } else {
+                            $('.magazine').turn('previous');
+                        }
+                    },
+                    // resize: function (event, scale, page, pageElement) {
+                    //   if (scale == 1)
+                    //     loadSmallPage(page, pageElement);
+                    //   else
+                    //     loadLargePage(page, pageElement);
+                    // },
+                    zoomIn: function () {
+                        $('.made').hide();
+                        $('.magazine').removeClass('animated').addClass('zoom-in');
+                        $('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
+
+                        if (!window.escTip && !$.isTouch) {
+                            escTip = true;
+                            $('<div />', { 'class': 'exit-message' }).
+                                html('<div>Press ESC to exit</div>').
+                                appendTo($('body')).
+                                delay(2000).
+                                animate({ opacity: 0 }, 500, function () {
+                                    $(this).remove();
+                                });
+                        }
+                    },
+                    zoomOut: function () {
+                        $('.exit-message').hide();
+                        $('.made').fadeIn();
+                        $('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
+                        setTimeout(function () {
+                            $('.magazine').addClass('animated').removeClass('zoom-in');
+                            resizeViewport();
+                        }, 0);
+                    }
+                }
+            });
+
+            // if ($.isTouch)
+            //   $('.magazine-viewport').bind('zoom.doubleTap', zoomTo);
+            // else
+            //   $('.magazine-viewport').bind('zoom.tap', zoomTo);
+
+            $(document).keydown(function (e) {
+                var previous = 37, next = 39, esc = 27;
+                switch (e.keyCode) {
+                    case previous:
+                        $('.magazine').turn('previous');
+                        e.preventDefault();
+
+                        break;
+                    case next:
+                        $('.magazine').turn('next');
+                        e.preventDefault();
+
+                        break;
+                    case esc:
+                        $('.magazine-viewport').zoom('zoomOut');
+                        e.preventDefault();
+
+                        break;
+                }
+            });
+
+            $(window).resize(function () {
+                resizeViewport();
+            }).bind('orientationchange', function () {
+                resizeViewport();
+            });
+
+
+
+            if ($.isTouch) {
+                $('.magazine').bind('touchstart', regionClick);
+
+
+                // $('.magazine').turn('display', 'single');
+                //$('.magazine').turn('center');
+                // $('.magazine').turn("size", 375, 600);
+            } else {
+                $('.magazine').click(regionClick);
+            }
+
+            if (isMobile) {
+                $('.magazine').turn('display', 'single');
+                // $(".magazine").turn("size", window.innerWidth, window.innerHeight);
+                /*  alert(window.innerWidth);
+                  alert(window.innerHeight);*/
+                /*if(window.innerHeight=="812"){
+                          $(".magazine").turn("size", (window.innerWidth), 690);
+        
+                }
+                else if(window.innerHeight<="748"){
+                    $(".magazine").turn("size", (window.innerWidth), window.innerWidth * 1.778630838);
+        
+                }else{
+                  $(".magazine").turn("size", (window.innerWidth), window.innerHeight);                
+                         // $(".magazine").turn("size", (window.innerWidth), window.innerHeight);
+                }*/
+                $(".magazine").turn("size", (window.innerWidth), window.innerWidth * 1.778630838);
+
+                // if(window.innerHeight=="812"){
+                //   /*height for Iphone X*/
+                //    //$(".magazine").turn("size", (window.innerWidth - (window.innerWidth*10/100)), window.innerHeight - (window.innerHeight*50/100));
+                //    $(".magazine").turn("size", (window.innerWidth), window.innerHeight - (window.innerHeight*30/100));
+                // }else{
+                //    //$(".magazine").turn("size", (window.innerWidth - (window.innerWidth*10/100)), window.innerHeight - (window.innerHeight*40/100));
+                //    $(".magazine").turn("size", (window.innerWidth),  window.innerHeight - (window.innerHeight*15/100));
+                // }     
+            }
+
+            $('.next-button').bind($.mouseEvents.over, function () {
+                $(this).addClass('next-button-hover');
+            }).bind($.mouseEvents.out, function () {
+                $(this).removeClass('next-button-hover');
+            }).bind($.mouseEvents.down, function () {
+                $(this).addClass('next-button-down');
+            }).bind($.mouseEvents.up, function () {
+                $(this).removeClass('next-button-down');
+            }).click(function () {
+                $('.magazine').turn('disable', false);
+                $('.magazine').turn('next');
+            });
+
+            $('.previous-button').bind($.mouseEvents.over, function () {
+                $(this).addClass('previous-button-hover');
+            }).bind($.mouseEvents.out, function () {
+                $(this).removeClass('previous-button-hover');
+            }).bind($.mouseEvents.down, function () {
+                $(this).addClass('previous-button-down');
+            }).bind($.mouseEvents.up, function () {
+                $(this).removeClass('previous-button-down');
+            }).click(function () {
+                $('.magazine').turn('disable', false);
+                $('.magazine').turn('previous');
+            });
+
+            resizeViewport();
+            $('.magazine').addClass('animated');
+        }
+
+        /*$('.zoom-icon').bind('mouseover', function () {
+          if ($(this).hasClass('zoom-icon-in'))
+            $(this).addClass('zoom-icon-in-hover');
+          if ($(this).hasClass('zoom-icon-out'))
+            $(this).addClass('zoom-icon-out-hover');
+        }).bind('mouseout', function () {
+          if ($(this).hasClass('zoom-icon-in'))
+            $(this).removeClass('zoom-icon-in-hover');
+          if ($(this).hasClass('zoom-icon-out'))
+            $(this).removeClass('zoom-icon-out-hover');
+        }).bind('click', function () {
+          if ($(this).hasClass('zoom-icon-in'))
+            $('.magazine-viewport').zoom('zoomIn');
+          else if ($(this).hasClass('zoom-icon-out'))
+            $('.magazine-viewport').zoom('zoomOut');
+        });*/
+
+        $('.flipbook-prev').on('click', function () {
+            $('.previous-button').trigger('click');
+        })
+        $('.flipbook-next').on('click', function () {
+            $('.next-button').trigger('click');
+        })
+        /*$(".magazine").bind("start", function(event, pageObject, corner) {
+          console.log(corner); 
+          if (corner=="tl" || corner == 'tr' || corner=="bl" || corner=="br" ) {
+            event.preventDefault();      
+          }
+        });*/
+
+        /*$('.first-page').on('click', function(){
+          $(".magazine").turn("page", 1);
+        })
+      
+        $('.last-page').on('click', function(){
+          $(".magazine").turn("page" , $(".magazine").turn("pages"));
+        })*/
+
+        $('#canvas').hide();
+
+        // window.setTimeout(function() {
+        /*$.getScript( "https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/modernizr.js?v11613054780", function( data, textStatus, jqxhr ) { 
+          yepnope({   
+            test: Modernizr.csstransforms,
+            yep: ["https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/turn.js?v11612256616"],
+            both: ["https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/zoom.js?v11612256616", "https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/magazine.js?v11615822028", "https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/css/magazine.css?v11613653602"],
+            // complete: loadApp
+          });
+        });*/
+        // }, 3000);
+
+
+
+        /*$("#test-click").click(function() {
+          // show_catalog_new(this.id.split('-')[2]);
+          show_catalog_new();
+        });*/
+
+        function show_catalog_new(id = '') {
+
+            // var isMobile = false; //initiate as false
+            // device detection
+            if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
+                || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))) isMobile = true;
+
+            var frameheight = "805px";
+            if (isMobile) {
+                frameheight = "400px";
+            }
+
+            // headline = '<div class="row heading hidden-xs"><div class="col-sm-3"><a href="javascript:;" class="back-to">العودة إلى جميع الكتالوجات</a></div><div class="col-sm-9 col-lg-6 text-center"><h2>' + catalogs[id].title + '</h2></div></div>';
+
+            catalogsTitle = catalogs[id].title;
+
+            /*headline = '<div class="row heading"><div class="col-sm-6"><a href="/om/ar/catalogue" class="back-to">عرض كل الكتالوجات</a></div><div class="col-sm-6 downPdf hidden-xs"><a class="cta" id="downloadPDF" data-text="'+catalogs[id].title+'"  href="https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/images/pdf/OUTDOOR UAE ENGLISH - Home Centre Outdoor Catalogue 2020 UAE English.pdf" target="_blank" download>تحميل PDF</a></div></div>';*/
+            headline = '<div class="row heading"><div class="col-sm-6"><a href="/om/ar/catalogue" class="back-to">عرض كل الكتالوجات</a></div><div class="col-sm-6 downPdf hidden-xs"><a class="cta" id="downloadPDF" data-text="' + catalogs[id].title + '"  href="" target="_blank" download>تحميل PDF</a></div></div>';
+
+            // $('#catalog').before(headline);
+
+            /*if(catCountry == 'ae') {
+              $jU = 'https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/catalogue-test.json';
+            } else {*/
+            $jU = 'https://uatwww2.homecentre.com/ecomm/sites/ecomm/files/catalogue_json/pdf_' + id + '.json';
+            /*}*/
+            $.ajax({
+                url: $jU,
+                // url: 'https://uatwww2.homecentre.com/ecomm/sites/ecomm/files/catalogue_json/pdf_'+id+'.json',
+                cache: false,
+                type: 'GET',
+                dataType: 'json',
+            })
+                .done(function (catalogue_data) {
+                    //console.log(catalogue_data);
+                    web_trackEvent('Catalogues', 'Catalogue Click', catalogs[id].title, _App);
+                    var lang = 'ar';
+                    catalogPDF_url = catalogue_data['pdf'][lang];
+                    catalogPDF_utm = catalogue_data['utm'];
+
+                    magazine_detail = '';
+                    magazine_detail += '<div class="magazine">';
+                    magazine_detail += '<div ignore="1" class="next-button"></div>';
+                    magazine_detail += '<div ignore="1" class="previous-button"></div>';
+
+                    $.each(catalogue_data[lang], function (node) {
+                        /*if(catCountry == 'ae') {
+                          magazine_detail += '<div><img src="https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom'+catalogue_data[lang][node].page_image+'" width="100%" height="100%">';
+                        } else {*/
+                        magazine_detail += '<div><img src="' + catalogue_data[lang][node].page_image + '" width="100%" height="100%">';
+                        /*}*/
+                        $.each(catalogue_data[lang][node].products, function (prod) {
+                            if (catalogue_data[lang][node].products.length) {
+
+                                if (catalogue_data[lang][node].products[prod].text_link == 1) {
+                                    magazine_detail += '<div value="' + catalogue_data[lang][node].products[prod].product_id + '" class="ihotspot-textlink" style="top: ' + catalogue_data[lang][node].products[prod].y_coord + '%; left: ' + catalogue_data[lang][node].products[prod].x_coord + '%;"></div>';
+                                } else if (catalogue_data[lang][node].products[prod].product_id.indexOf('/') != -1) {
+                                    magazine_detail += '<div value="' + catalogue_data[lang][node].products[prod].product_id + '" class="ihotspot-link" style="top: ' + catalogue_data[lang][node].products[prod].y_coord + '%; left: ' + catalogue_data[lang][node].products[prod].x_coord + '%;"></div>';
+                                } else {
+                                    magazine_detail += '<div value="' + catalogue_data[lang][node].products[prod].product_id + '" class="ihotspot" style="top: ' + catalogue_data[lang][node].products[prod].y_coord + '%; left: ' + catalogue_data[lang][node].products[prod].x_coord + '%;"></div>';
+                                }
+
+                            }
+                        });
+                        magazine_detail += '</div> ';
+                    });
+                    magazine_detail += '</div>';
+                    //      magazine_detail += '<div class="flip-page-container"><div class="flip-page hidden-xs" style="visibility: hidden;"></div></div>';
+
+                    // $('#catalogue-details .previous-button').after(magazine_detail);
+                    $('#catalogue-details .magazine-viewport .container').html(magazine_detail);
+                    loadApp();
+
+                    // if (isMobile) {      
+                    //   $('.magazine').turn('display', 'single');
+                    //   // $(".magazine").turn("size", window.innerWidth, window.innerHeight);
+                    //   if(window.innerHeight=="812"){
+                    //             $(".magazine").turn("size", (window.innerWidth), 690);
+
+                    //   }else{
+                    //             $(".magazine").turn("size", (window.innerWidth), window.innerWidth * 1.778630838);
+
+                    //   }
+
+
+                    //   // if(window.innerHeight=="812"){
+                    //   //   /*height for Iphone X*/
+                    //   //    //$(".magazine").turn("size", (window.innerWidth - (window.innerWidth*10/100)), window.innerHeight - (window.innerHeight*50/100));
+                    //   //    $(".magazine").turn("size", (window.innerWidth), window.innerHeight - (window.innerHeight*30/100));
+                    //   // }else{
+                    //   //    //$(".magazine").turn("size", (window.innerWidth - (window.innerWidth*10/100)), window.innerHeight - (window.innerHeight*40/100));
+                    //   //    $(".magazine").turn("size", (window.innerWidth),  window.innerHeight - (window.innerHeight*15/100));
+                    //   // }     
+                    // }
+
+                    // $('#test-click').hide();
+                    $('#brands-section').parent().addClass('catalogueInner catalogue-' + id);
+                    if ($('main').hasClass("catalogueInner")) {
+                        $('.hmc2.hc2 .header').addClass('cat-header');
+                        $('div#mob-cat').addClass('cat-mob-cat');
+                        $('.mob-custLocation-container.visible-xs').addClass('cat-mob-custLocation-container');
+                    }
+                    $('#catalog').before(headline);
+                    $('#catalog').hide();
+                    $('#catalogue-details').show();
+
+                    /*$('.downPdf').each(function(){
+                      console.log($(this).attr('data-text'));
+                      $(this).attr('href', catalogPDF_url);
+                    });*/
+                    $('.downPdf a').attr('href', catalogPDF_url);
+
+                    $('html,body').animate({
+                        scrollTop: $("#catalogue-details").offset().top
+                    },
+                        'slow');
+
+                    /*$("a.back-to").click(function() {
+                      // catalogue_list();
+                      // $('#test-click').show();
+                      $('#catalog').show();
+                      $('#brands-section-container .row.heading').remove();
+                      $(".magazine").turn("destroy");
+                      $('#catalogue-details .magazine').remove();
+                      $('#results modal').remove();
+                      // $('.magazine div > img').parent().remove();
+                      // $(".magazine-viewport").turn("destroy");
+                      // $(".magazine").removeClass("animated");
+                      $('#canvas').hide();
+                      // $( window ).unbind( 'keydown' );
+                      $('#catalogue-details').hide();
+                    });*/
+
+                    $(document).on("click", ".ihotspot-textlink", function (e) {
+                        var goLink = siteUrl + $(this).attr('value');
+                        window.open(goLink, '_blank');
+                    });
+                    $(document).on("click", ".ihotspot-link", function (e) {
+                        var goLink = siteUrl + $(this).attr('value');
+                        window.open(goLink, '_blank');
+                    });
+
+                    $(document).on("click", ".ihotspot", function (e) {
+                        $('.header').addClass('visibleHidden');
+                        $('.mob-custLocation-container .container-fluid').addClass('visibleHidden');
+                        $('#mob-cat').addClass('visibleHidden');
+                        $('.mob-custLocation-container').addClass('mob-custLocation-containerIos');
+                        $('.main-footer').addClass('visibleHidden');
+                        $('body').css('overflow', 'hidden');
+
+                        // $('.ihotspot').click(function () {
+                        //e.preventDefault();
+                        $(this).css('pointer-events', 'none');
+
+                        var indexName = 'prod_' + catCountry + '_homecentre_Product';
+
+                        var prod = $(this).attr('value');
+                        console.log(prod);
+                        web_trackEvent('Catalogues', 'Tag Clicked - ' + catalogsTitle, prod, _App);
+                        var algo_url = 'https://3hwowx4270-dsn.algolia.net/1/indexes/*/queries?X-Algolia-API-Key=4c4f62629d66d4e9463ddb94b9217afb&X-Algolia-Application-Id=3HWOWX4270&X-Algolia-Agent=Algolia%20for%20vanilla%20JavaScript%202.9.7';
+                        // var algo_url = 'https://'+(LMS.pageData.algoliaAppId).toLowerCase()+'-dsn.algolia.net/1/indexes/*/queries?X-Algolia-API-Key='+LMS.pageData.algoliaSearchKey+'&X-Algolia-Application-Id='+LMS.pageData.algoliaAppId+'&X-Algolia-Agent=Algolia%20for%20vanilla%20JavaScript%202.9.7';
+                        // if (catCountry == 'sa') {
+                        //   var algo_url = 'https://testingk0454r3ld9-dsn.algolia.net/1/indexes/*/queries?X-Algolia-API-Key=56ae2a08fbb329e674fbc14c1f04674b&X-Algolia-Application-Id=testingK0454R3LD9&X-Algolia-Agent=Algolia%20for%20vanilla%20JavaScript%202.9.7';
+                        // } else {
+                        //   var algo_url = 'https://lm8x36l8la-1.algolianet.com/1/indexes/*/queries?X-Algolia-API-Key=7a625e3a548ccdd0393b5565896c5d89&X-Algolia-Application-Id=LM8X36L8LA&X-Algolia-Agent=Algolia%20for%20vanilla%20JavaScript%202.9.7';
+                        // }
+                        $.ajax({
+                            url: algo_url,
+                            cache: false,
+                            type: 'POST',
+                            data: '{"requests":[{"indexName":"' + indexName + '","params":"query=&facetFilters=%5B%22approvalStatus%3A1%22%2C%5B%22objectID%3A' + prod + '%22%5D%5D"}]}',
+                            dataType: 'json',
+                            beforeSend: function () { LMS.Loader.showPageLoader(); },
+                        })
+                            .done(function (home_data) {
+                                // console.log(home_data);
+                                var results = home_data.results;
+                                var hit = results[0].hits;
+                                console.log(hit);
+                                var prod = '';
+
+                                for (var i = 0; i < hit.length; i++) {
+                                    var l1 = hit[i].manufacturerName[catLang];
+                                    /*var ll=JSON.stringify(hit[i].url);
+                                    var link=ll.match(/en":\"(.*?)\"/is);
+                                    var prod_id = hit[i].objectID;*/
+
+                                    /*prod+='<div class="col-sm-4"><a href="#" data-toggle="modal" data-target="#video-modal'+i+'">';
+                                    prod+=l1;
+                                    prod+='</a></div>';*/
+
+                                    prod += '<div id="video-modal' + i + '" class="modal fade popup" role="dialog">';
+                                    prod += '<div class="modal-dialog">';
+                                    prod += '<div id="popup_content" style="transform: scale(1);" class="modal-content">';
+                                    // prod+='<div class="modal-header">';
+                                    //   prod+='<button id="popup_close" type="button" class="close" data-dismiss="modal">&times;</button>';
+                                    // prod+='</div>';
+                                    prod += '<button id="popup_close_1" type="button" class="closed" data-dismiss="modal"></button>';
+                                    prod += '<div class="modal-body products-view reader-view active compact" id="video_box">';
+
+                                    prod += '<div class="product-details">';
+                                    prod += getProductHTML(hit[i]);
+                                    prod += '</div>';
+
+                                    prod += '</div>';
+                                    prod += '</div>';
+                                    prod += '</div>';
+                                    prod += '</div>';
+
+                                }
+                                $('#results').html(prod);
+
+                                /*var prod_new='';
+                                prod_new+=getProductHTML(hit[i]);
+                                $('#results .product-details').html(prod_new);*/
+
+
+                                // if ($('#results span.selected-area').html() != 'undefined') {
+                                if ($('#results #quick-selected-area').val() != '') {
+                                    $('#results .qv-location-container').addClass('hidden');
+                                    $('#results .qv-deliver-to').removeClass('hidden');
+                                } else {
+                                    $('#results .qv-location-container').removeClass('hidden');
+                                    $('#results .qv-deliver-to').addClass('hidden');
+                                }
+                                $('#results .thumbnails-fav .cat-thumbnail-image').first().addClass('active');
+                                // window.setTimeout(function() {
+
+                                // }, 1000);
+                                // setStockLevel(prod_id);
+
+                                var slickUrl = "https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/js/slick.js";
+                                $.getScript(slickUrl, function () {
+                                    $('.language-en .media-slider-mobile').slick({
+                                        infinite: false,
+                                        responsive: [
+                                            {
+                                                breakpoint: 767,
+                                                settings: {
+                                                    centerMode: false,
+                                                    slidesToShow: 1.2,
+                                                    speed: 100,
+                                                    slidesToScroll: 1,
+                                                    arrows: false,
+                                                }
+                                            },
+                                        ]
+                                    });
+                                    $('.language-ar .media-slider-mobile').slick({
+                                        infinite: false,
+                                        rtl: true,
+                                        responsive: [
+                                            {
+                                                breakpoint: 767,
+                                                settings: {
+                                                    centerMode: false,
+                                                    slidesToShow: 1.2,
+                                                    speed: 100,
+                                                    slidesToScroll: 1,
+                                                    arrows: false,
+                                                }
+                                            },
+                                        ]
+                                    });
+                                    LMS.Loader.hidePageLoader();
+                                    $('#video-modal0').modal('show');
+                                });
+
+                                /*$('.media-slider-mobile').slick('reinit');*/
+                                // $('.media-slider-mobile').slick('unslick');
+                                /*$('#video-modal0 .media-slider-mobile').slick({
+                                   slidesToShow: 1,
+                                   adaptiveHeight: false,
+                                });*/
+                                // $('#video-modal0 .media-slider-mobile').slick();
+                                /*$('#video-modal0.modal').on('shown.bs.modal', function (e) {
+                                  $('.media-slider-mobile').slick();
+                                  // $('.media-slider-mobile').slick('setPosition');
+                                });*/
+
+                                /*$('#carousel').carousel();
+                                $('.carousel-indicators > li').first().addClass('active');
+                                $('.carousel-inner > .carousel-item').first().addClass('active');*/
+
+                                /*$('.hmc2 .modal-backdrop.in:eq(1)').css('z-index','10');
+                                $('#video-modal0').css('background','rgb(0,0,0,0.5)');*/
+
+                                // COLOR SELECTION
+                                /*if($('.catColours').find('.catColor').length > 0) {
+                                  $('.catColours > span').first().addClass('active');
+                                  // $('.catColours .catColor').click(function () {
+                                    //$(".catColours").on("click",".catColor", function(){
+                                  // $('.catColours .catColor').bind('click', function () {​​​​​​​​​
+                                    // $(".catColours > span.active").removeClass("active");
+                                    // $(this).addClass('active');
+                                    // $('.colorName').html($(this).children().attr('alt'));
+                    //------------------------------------------------------------------------------
+                    
+                    //------------------------------------------------------------------------------
+                                 // });
+                                }*/
+
+                                // SIZE SELECTION
+                                /*if($('.catSizes').find('.catVariant').length) {
+                                  $('.catSizes > span').first().addClass('active');
+                                  $('.catSizes .catVariant').click(function () {
+                                    $(".catSizes > span.active").removeClass("active");
+                                    $(this).addClass('active');
+                                  });
+                                }*/
+                                if ($('.catSizesValues').find('.catVariant').length) {
+                                    $('.catSizesValues > option').first().addClass('selected');
+                                    $('.catSizesValues .catVariant').click(function () {
+                                        $(".catSizesValues > option.active").removeClass("selected");
+                                        $(this).addClass('selected');
+                                    });
+                                }
+
+
+                                /*$('#catBasket').click(function () {
+                                  var url = 'https://uat1.homecentre.com/ae/en/cart/addToCart?code=162830760&id=3801562&qty=1';
+                                  $.ajax({
+                                    url: url,
+                                    cache: false,
+                                    type: 'POST',
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                  })
+                                  .done(function(data) {
+                                    console.log('data');
+                                    console.log(data);
+                                  });
+                                });*/
+
+                                /*$('#catBasket').click(function () {
+                                  // var id = prod_id;
+                  
+                                  if($('.catColours').find('.catColor').length) {
+                                    var id = $(".catColours > span.active").attr('id');
+                                  } else {
+                                    var id = prod_id;
+                                  }
+                  
+                                  if($('.catSizes').find('.catVariant').length) {
+                                    var code = $(".catSizes > span.active").attr('id');
+                                  } else {
+                                    // var code = prod_id;
+                                    var code = id;
+                                  }
+                                  var url = 'https://uat1.homecentre.com/ae/en/cart/addToCart?code='+code+'&id='+id+'&qty=1';
+                                  $.ajax({
+                                    url: url,
+                                    cache: false,
+                                    type: 'POST',
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                  })
+                                  .done(function(data) {
+                                    if (data.statusCode == "success") {
+                                      var $elm = $("<div class='success-msg'>Product added successfully.</div>");
+                                      $("#addCartMsg").prepend($elm);
+                                      setTimeout(function() {
+                                          $elm.remove();
+                                      }, 5000);
+                                    } else {
+                                      var $elm = $("<div class='error-msg'>Something went wrong.</div>");
+                                      $("#addCartMsg").prepend($elm);
+                                      setTimeout(function() {
+                                          $elm.remove();
+                                      }, 5000);
+                                      console.log(data.statusMessage);
+                                    }
+                                    console.log(data);
+                                  });
+                                });*/
+                            });
+                    });
+
+                });
+        }
+
+        // Track Events for GA
+        function web_trackEvent(category, action, label, isApp) {
+            // console.log('isapp:' + isApp);
+            // $('#appD').html(category+'--'+action+'--'+label+'--'+isApp);
+            if (isApp) {
+                app_trackEvent(category, action, label);
+            } else {
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0]; a.async = 0; a.src = g; m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', LMS.pageData.ga, 'auto');
+
+                ga('send', 'event', category, action, label);
+            }
+        }
+
+        function disableOurControls(page) {
+            if (page == 1)
+                $('.flipbook-prev').hide();
+            else
+                $('.flipbook-prev').show();
+
+            if (page == $('.magazine').turn('pages'))
+                $('.flipbook-next').hide();
+            else
+                $('.flipbook-next').show();
+        }
+        function setStockLevel(prod_id) {
+            // return $.get('https://uat1.homecentre.com/'+catCountry+'/'+catLang+'/p/'+prod_id+'/variantDetail');
+            $.getJSON(siteUrl + '/p/' + prod_id + '/variantDetail', function (variantDetail) {
+                console.log(variantDetail.stock);
+                stockLevel = (variantDetail.stock.stockLevel < 10) ? variantDetail.stock.stockLevel : 10;
+                console.log(stockLevel);
+                $("#popup_content #cat-qty-number").attr('max', stockLevel);
+            });
+        }
+        function getProductHTML(hitData) {
+            var ll = JSON.stringify(hitData.url);
+            var link = ll.match(/en":\"(.*?)\"/is);
+            prod_id = hitData.objectID;
+            var prod = '';
+
+            prod += '<div id="product_' + hitData.objectID + '" class="product-view no-media reader-view active">';
+            // Desktop Image Gallary
+            prod += '<div class="media-slider hidden-xs" data-product-id="' + hitData.objectID + '">';
+            prod += '<img class="cat-prod-image d-block w-100" src="' + hitData["345WX345H"] + '">';
+
+            prod += '<div class="thumbnails-fav">';
+            prod += '<div class="cat-thumbnails">    ';
+            if (hitData.gallaryImages) {
+                Object.entries(hitData.gallaryImages).forEach(([key, value]) => {
+                    prod += '<div class="cat-thumbnail-image">';
+                    prod += '<img data-key="' + value + '" src="' + value + '">';
+                    prod += '</div>';
+                });
+            }
+            prod += '</div>';
+            prod += '</div>';
+            prod += '</div>';
+
+            // Mobile Image Gallary
+            prod += '<div class="media-slider visible-xs" data-product-id="' + hitData.objectID + '">';
+            prod += '<div class="media-slider-mobile">';
+            if (hitData.gallaryImages) {
+                Object.entries(hitData.gallaryImages).forEach(([key, value]) => {
+                    prod += '<div class="slider-mobile-image">';
+                    prod += '<img data-key="' + value + '" src="' + value + '">';
+                    prod += '</div>';
+                });
+            } else {
+                prod += '<img class="cat-prod-image d-block w-100" src="' + hitData["345WX345H"] + '">';
+            }
+            prod += '</div>';
+            prod += '</div>';
+
+            prod += '<div class="content-wrapper">';
+            prod += '<div class="content">';
+            // prod+='<section class="image-carousel"></section>';
+            prod += '<section class="summary">';
+            prod += '<h1 id="popup_title">' + hitData.name[catLang] + '</h1>';
+
+            prod += '<div class="price">';
+            if (catLang == 'ar') {
+                prod += '<span class="current-price">' + hitData.price + LMS.pageData.currencyMarkup + '</span>';
+            } else {
+                prod += '<span class="current-price">' + LMS.pageData.currencyMarkup + hitData.price + '</span>';
+            }
+            if (hitData.wasPrice > hitData.price) {
+                if (catLang == 'ar') {
+                    prod += '<span class="old-price">' + hitData.wasPrice + LMS.pageData.currencyMarkup + '</span>';
+                } else {
+                    prod += '<span class="old-price">' + LMS.pageData.currencyMarkup + hitData.wasPrice + '</span>';
+                }
+            }
+            prod += '</div>';
+
+            prod += '<div class="availability-state">';
+            if (hitData.inStock != 0) {
+                prod += '<span class="in-stock">متوفر في المخزون أونلاين</span>';
+            } else {
+                prod += '<span class="out-stock">هذا المنتج غير متوفر في المخزن أونلاين</span>';
+            }
+            prod += '</div>';
+
+            prod += '<div class="catColourBox colorProduct">';
+            prod += '<div class="catColourName"><span class="colorLabel catLabel">اللون: </span><span class="colorName">' + hitData.color[catLang] + '</span></div>';
+            // prod+='<div class="catColourName colorLabel">Color:</div>';
+            prod += '<div class="catColours colourValue">';
+            prod += '<span class="colourVariant catColor active" id="' + prod_id + '"><img class="d-block w-100" alt="' + hitData.color[catLang] + '" src="' + hitData.thumbnailImg + '"></span>';
+            if (hitData.sibiling) {
+                Object.entries(hitData.sibiling).forEach(([key, value]) => {
+                    prod += '<span class="colourVariant catColor" id="' + value.code + '"><img class="d-block w-100" alt="' + value.colorCode[catLang] + '" src="' + value.thumbnailImg + '"></span>';
+                });
+            }
+            prod += '</div>';
+            prod += '</div>';
+
+            prod += '<div class="catSizes">';
+            if (hitData.variants && Object.entries(hitData.variants).length > 0) {
+                prod += '<span class="catLabel">Size</span>';
+                prod += '<select class="catSizesValues">'
+                Object.entries(hitData.variants).forEach(([key, value]) => {
+                    prod += '<option class="catVariant" id="' + value + '" value="' + key + '">' + key + '</option>';
+                });
+                prod += '</select>';
+            }
+            prod += '</div>';
+
+            if (_App == 0 && hitData.inStock != 0) {
+                var stockLevel = 1;
+                prod += '<div class="catQuantity">';
+                prod += '<span class="jcf-number">';
+                prod += '<input id="cat-qty-number" name="quantity" type="number" min="1" value="1" max="' + stockLevel + '" data-product-threshold="10" class="jcf-real-element" readonly="readonly" onkeydown="return false;">';
+                prod += '<span class="jcf-btn-inc"></span>';
+                prod += '<span class="jcf-btn-dec"></span>';
+                prod += '</span>';
+                prod += '</div>';
+
+                setStockLevel(prod_id);
+            }
+
+            isConceptDelivery = hitData.isConceptDelivery;
+            // prod+='<span id="catIsConceptDelivery">'+isConceptDelivery+'</span>';
+
+            prod += '<div class="cat-action-items">';
+            if (_App == 0 && hitData.inStock != 0) {
+                prod += '<a id="catBasket" aria-label="Add to Basket" data-text="Add to Basket - " class="cta basket">';
+                prod += '<div class="cta-bg"></div>';
+                prod += '<span class="cta-fg" aria-hidden="true">أضف إلى السلة</span>';
+                prod += '</a>';
+            }
+
+            //prod+='<a aria-label="More Details" target="_blank" id="moreDetail" data-text="See Full Details - " class="cta" href="'+siteUrl+link[1]+'"'+siteUrl+link[1]+'?utm_source=Catalogue&utm_medium=Catalogue&utm_campaign=Ramadan2021">';
+            // prod+='<a aria-label="More Details" target="_blank" id="moreDetail" data-text="See Full Details - " class="cta" href="'+siteUrl+link[1]+'?utm_source=Catalogue&utm_medium=Catalogue&utm_campaign=Ramadan2021">';
+            prod += '<a aria-label="More Details" target="_blank" id="moreDetail" data-text="See Full Details - " class="cta" href="' + siteUrl + link[1] + '?' + catalogPDF_utm + '">';
+            prod += '<div class="cta-bg"></div>';
+            prod += '<span class="cta-fg-more-details" aria-hidden="true">انظر التفاصيل الكاملة</span>';
+            prod += '</a>';
+
+            /*if (_App == 1) {
+              prod+='<a aria-label="More Details" target="_blank" id="moreDetail" data-text="See Full Details - " class="cta" href="'+siteUrl+link[1]+'"href="https://www.homecentre.com/om/en/'+link[1]+'?utm_source=Catalogue&utm_medium=Catalogue&utm_campaign=Ramadan2021">';
+              prod+='<div class="cta-bg"></div>';
+              prod+='<span class="cta-fg-more-details" aria-hidden="true">WWW See Full Details</span>';
+              prod+='</a>';
+            }*/
+
+
+            prod += '<div id="addCartMsg"></div>';
+            // prod+='<a class="goToCart" target="_blank" href="https://uat1.homecentre.com/om/en/cart">Go to Cart</a>';
+            prod += '</div>';
+            prod += '</section>';
+            /*prod+='<section class="media" tabindex="0">';
+              prod+='<h2 class="section-title">Extra images</h2>';
+              prod+='<nav>';
+                for (var j=0;j<hitData.gallaryImages.length;j++){
+                  prod+='<a class="photo active" data-index="0" tabindex="-1">';
+                    prod+='<div class="thumb" style="background-image: url("'+hitData.gallaryImages[j]+'")"></div>';
+                    prod+='<div class="overlay"></div>';
+                  prod+='</a>';
+                }
+              prod+='</nav>';
+            prod+='</section>';*/
+            prod += '<section class="description">';
+            if (hitData.summary[catLang] != undefined)
+                prod += '<div class="body">' + hitData.summary[catLang] + '</div>';
+            prod += '</section>';
+            prod += '</div>';
+            /*prod+='<nav class="sharing" tabindex="0">';
+                  prod+='<a id="facebook-button" data-href="/share/facebook" aria-label="Facebook" href=" tabindex="-1"></a>';
+                  prod+='<a id="pintrest-button" data-href="/share/pintrest" aria-label="Pinterest" href=" tabindex="-1"></a>';
+                  prod+='<a id="twitter-button" data-href="/share/twitter" aria-label="Twitter" href=" tabindex="-1"></a>';
+                  prod+='<a id="email-button" data-href="/share/email" aria-label="Email" href=" tabindex="-1"></a>';
+            prod+='</nav>';*/
+            prod += '<nav class="sharing" tabindex="0">';
+            prod += '<a class="social-link" id="facebookSharelink" data-text="Facebook - "  href="https://www.facebook.com/sharer/sharer.php?u=https://www.homecentre.com/om/ar' + link[1] + '" target="_blank"><img src="https://i1.lmsin.net/website_images/static-pages/brand_exp/images/fb-icon.svg"></a>';
+            prod += '<a class="social-link" id="twitterSharelink" data-text="Twitter - " href="https://twitter.com/intent/tweet?url=https://www.homecentre.com/om/ar' + link[1] + '" target="_blank"><img src="https://i1.lmsin.net/website_images/static-pages/brand_exp/images/twitter-icon.svg"></a>';
+            prod += '<a class="social-link" id="instaSharelink" data-text="Instagram - "href="http://pinterest.com/pin/create/link/?url=https://www.homecentre.com/om/ar' + link[1] + '" target="_blank"><img src="https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/images/pics/icons8-pinterest 1@2x.png"></a>';
+            prod += '</nav>';
+            prod += '</div>';
+            prod += '</div>';
+
+            return prod;
+        }
+
+        $(function () {
+            $(document).on("click", ".catColours .catColor", function () {
+
+                var indexName = 'prod_' + catCountry + '_homecentre_Product';
+
+                var color_prod = $(this).attr('id');
+                console.log(color_prod);
+                web_trackEvent('Catalogues', 'Color Switch - ' + catalogsTitle, color_prod, _App);
+
+                var algo_url = 'https://3hwowx4270-dsn.algolia.net/1/indexes/*/queries?X-Algolia-API-Key=4c4f62629d66d4e9463ddb94b9217afb&X-Algolia-Application-Id=3HWOWX4270&X-Algolia-Agent=Algolia%20for%20vanilla%20JavaScript%202.9.7';
+                // var algo_url = 'https://'+(LMS.pageData.algoliaAppId).toLowerCase()+'-dsn.algolia.net/1/indexes/*/queries?X-Algolia-API-Key='+LMS.pageData.algoliaSearchKey+'&X-Algolia-Application-Id='+LMS.pageData.algoliaAppId+'&X-Algolia-Agent=Algolia%20for%20vanilla%20JavaScript%202.9.7';
+                // if (catCountry == 'sa') {
+                //   var algo_url = 'https://testingk0454r3ld9-dsn.algolia.net/1/indexes/*/queries?X-Algolia-API-Key=56ae2a08fbb329e674fbc14c1f04674b&X-Algolia-Application-Id=testingK0454R3LD9&X-Algolia-Agent=Algolia%20for%20vanilla%20JavaScript%202.9.7';
+                // } else {
+                //   var algo_url = 'https://lm8x36l8la-1.algolianet.com/1/indexes/*/queries?X-Algolia-API-Key=7a625e3a548ccdd0393b5565896c5d89&X-Algolia-Application-Id=LM8X36L8LA&X-Algolia-Agent=Algolia%20for%20vanilla%20JavaScript%202.9.7';
+                // }
+                $.ajax({
+                    url: algo_url,
+                    cache: false,
+                    type: 'POST',
+                    data: '{"requests":[{"indexName":"' + indexName + '","params":"query=&facetFilters=%5B%22approvalStatus%3A1%22%2C%5B%22objectID%3A' + color_prod + '%22%5D%5D"}]}',
+                    dataType: 'json',
+                })
+                    .done(function (home_data1) {
+                        // console.log(home_data);
+                        var results1 = home_data1.results;
+                        var hit = results1[0].hits;
+                        // console.log(hit[0]);
+
+                        /*var llC=JSON.stringify(hit[0].url);
+                        var linkC=llC.match(/en":\"(.*?)\"/is);*/
+                        var prod_new = '';
+                        // var prod_id = hit[0].objectID;
+                        prod_new += getProductHTML(hit[0]);
+
+                        $('#results .product-details').html(prod_new);
+
+                        if ($('#results #quick-selected-area').val() != '') {
+                            $('#results .qv-location-container').addClass('hidden');
+                            $('#results .qv-deliver-to').removeClass('hidden');
+                        } else {
+                            $('#results .qv-location-container').removeClass('hidden');
+                            $('#results .qv-deliver-to').addClass('hidden');
+                        }
+                        $('#results .thumbnails-fav .cat-thumbnail-image').first().addClass('active');
+
+                        // setStockLevel(prod_id);
+
+                        $('.language-en .media-slider-mobile').slick({
+                            infinite: false,
+                            responsive: [
+                                {
+                                    breakpoint: 767,
+                                    settings: {
+                                        centerMode: false,
+                                        slidesToShow: 1.2,
+                                        speed: 100,
+                                        slidesToScroll: 1,
+                                        arrows: false,
+                                    }
+                                },
+                            ]
+                        });
+                        $('.language-ar .media-slider-mobile').slick({
+                            infinite: false,
+                            rtl: true,
+                            responsive: [
+                                {
+                                    breakpoint: 767,
+                                    settings: {
+                                        centerMode: false,
+                                        slidesToShow: 1.2,
+                                        speed: 100,
+                                        slidesToScroll: 1,
+                                        arrows: false,
+                                    }
+                                },
+                            ]
+                        });
+
+                        /*if($('.catColours').find('.catColor').length) {
+                          $('.catColours > span').first().addClass('active');
+                        }*/
+                    });
+            });
+
+            $(document).on("click", "#catBasket", function () {
+                // console.log('isConceptDeliveryGlobal:'+isConceptDelivery);
+                // console.log('isMobileGlobal:'+isMobile);
+                // console.log('customerLocationInformationAreaGlobal:'+$('#results #quick-selected-area').val());
+
+                prod_id = $("#results .product-details .media-slider").attr('data-product-id');
+                // var id = prod_id;
+                console.log('prod_id:' + prod_id);
+                /*var laberAddToCart = 'Add to basket - '+prod_id;
+                web_trackEvent('Catalogues', 'Clicks', laberAddToCart , _App);*/
+                web_trackEvent('Catalogues', 'Add to Basket - ' + catalogsTitle, prod_id, _App);
+
+                if ($('.catColours').find('.catColor').length) {
+                    var id = $(".catColours > span.active").attr('id');
+                } else {
+                    var id = prod_id;
+                }
+
+                if ($('.catSizesValues').find('.catVariant').length) {
+                    var code = $(".catSizesValues > option.catVariant").attr('id');
+                } else {
+                    var code = prod_id;
+                }
+                var qty = ($("#popup_content #cat-qty-number").val() != undefined) ? $("#popup_content #cat-qty-number").val() : 1;
+                var url = siteUrl + '/cart/addToCart?code=' + code + '&id=' + id + '&qty=' + qty;
+                $.ajax({
+                    url: url,
+                    cache: false,
+                    type: 'POST',
+                    crossDomain: true,
+                    dataType: 'json',
+                    beforeSend: function () { $('#catBasket .cta-fg').html(''); LMS.Loader.show('#catBasket .cta-fg'); },
+                })
+                    .done(function (data) {
+                        if (data.statusCode == "success") {
+                            LMS.Loader.hide('#catBasket .cta-fg');
+                            $('#catBasket').css('pointer-events', 'none');
+                            $('#catBasket .cta-fg').addClass('addedToBasket');
+                            $('#catBasket .cta-fg').html('تمت الإضافة');
+                            setTimeout(function () {
+                                $('#catBasket .cta-fg').removeClass('addedToBasket');
+                                $('#catBasket .cta-fg').addClass('goToBasket');
+
+                                $("#catBasket").attr({
+                                    id: "catGoBasket",
+                                    href: siteUrl + "/cart",
+                                    target: "_blank",
+                                    style: "pointer-events:unset",
+                                    'data-text': "Go to Cart - ",
+                                });
+
+                                /*$('#catBasket').attr("id","catGoBasket");
+                                $('#catGoBasket').attr('href','https://uat1.homecentre.com/om/ar/cart');
+                                $('#catGoBasket').attr('target','_blank');*/
+                                $('#catGoBasket .cta-fg').html('اذهب الى عربة التسوق');
+                            }, 2000);
+                            // $('#catBasket .cta-fg').html('Added to Basket');
+
+                            /*var $elm = $("<div class='success-msg'>Product added successfully.</div>");
+                            $("#addCartMsg").prepend($elm);
+                            setTimeout(function() {
+                                $elm.remove();
+                            }, 5000);*/
+                        } else {
+                            LMS.Loader.hide('#catBasket .cta-fg');
+                            $('#catBasket .cta-fg').html('أضف إلى السلة');
+                            var $elm = $("<div class='error-msg'>Something went wrong.</div>");
+                            $("#addCartMsg").prepend($elm);
+                            setTimeout(function () {
+                                $elm.remove();
+                            }, 5000);
+                            console.log(data.statusMessage);
+                        }
+                        console.log(data);
+
+                    });
+            });
+
+            $(document).on("click", "#popup_content .jcf-btn-inc", function () {
+                var qVal = parseInt($("#popup_content #cat-qty-number").val());
+                if (qVal < $("#popup_content #cat-qty-number").attr('max')) {
+                    $("#popup_content #cat-qty-number").val(qVal + 1);
+                }
+            });
+
+            $(document).on("click", "#popup_content .jcf-btn-dec", function () {
+                var qVal = parseInt($("#popup_content #cat-qty-number").val());
+                if (qVal > $("#popup_content #cat-qty-number").attr('min')) {
+                    $("#popup_content #cat-qty-number").val(qVal - 1);
+                }
+            });
+
+            $(document).on("click", "#downloadPDF", function () {
+                //var eventLabelDownloadPDF = $(this).attr('data-text');
+                web_trackEvent('Catalogues', 'Download PDF', catalogsTitle, _App);
+            });
+
+            $(document).on("click", "#catGoBasket", function () {
+                /*var eventLabelCatGoBasket = $(this).attr('data-text');
+               web_trackEvent('Catalogues', 'Clicks', eventLabelCatGoBasket, _App);*/
+                web_trackEvent('Catalogues', $(this).attr('data-text') + catalogsTitle, prod_id, _App);
+            });
+
+            $(document).on("click", "#moreDetail", function () {
+                /*var eventLabelMoreDetail = $(this).attr('data-text');
+               web_trackEvent('Catalogues', 'Clicks', eventLabelMoreDetail, _App);*/
+                web_trackEvent('Catalogues', $(this).attr('data-text' + catalogsTitle, prod_id, _App));
+            });
+
+            $(document).on("click", "nav.sharing a", function () {
+                web_trackEvent('Catalogues', $(this).attr('data-text') + catalogsTitle, prod_id, _App);
+            });
+
+            /*    $(document).on("click", "#facebookSharelink", function(){
+                 //  var eventLabelFacebookSharelink = $(this).attr('data-text');
+                   web_trackEvent('Catalogues', 'Facebook - '+ catalogsTitle, $(this).attr('data-text'), _App);
+                });
+            
+                $(document).on("click", "#twitterSharelink", function(){
+                 //  var eventLabelTwitterSharelink = $(this).attr('data-text');
+                   web_trackEvent('Catalogues', 'Twitter - '+ catalogsTitle, $(this).attr('data-text'), _App);
+                });
+            
+                $(document).on("click", "#instaSharelink", function(){
+                // var eventLabelInstaSharelink = $(this).attr('data-text');
+                 web_trackEvent('Catalogues', 'Instagram - '+ catalogsTitle, $(this).attr('data-text'), _App);
+                });*/
+
+            $(document).on("click", "#results .thumbnails-fav .cat-thumbnail-image", function () {
+                $("#results .cat-thumbnail-image.active").removeClass("active");
+                $(this).addClass('active');
+                var thumbImg = $(this).children().attr('src');
+                $("#results .media-slider img.cat-prod-image").attr('src', thumbImg);
+            });
+            $(document).on("click", "#popup_close_1", function () {
+                $('.ihotspot').css('pointer-events', '');
+
+                /*       $('html,body').animate({
+                        scrollTop: $("#catalogue-details").offset().top-40},
+                        'slow');*/
+
+                $('.header').removeClass('visibleHidden');
+                $('.mob-custLocation-container .container-fluid').removeClass('visibleHidden');
+                $('#mob-cat').removeClass('visibleHidden');
+                $('.mob-custLocation-container').removeClass('mob-custLocation-containerIos');
+                $('.main-footer').removeClass('visibleHidden');
+                $('body').css('overflow', '');
+
+            });
+
+            $('#video-modal0.modal').on('hidden.bs.modal', function (e) {
+                $('.ihotspot').css('pointer-events', '');
+                $('.header').removeClass('visibleHidden');
+                $('.mob-custLocation-container .container-fluid').removeClass('visibleHidden');
+                $('#mob-cat').removeClass('visibleHidden');
+                $('.mob-custLocation-container').removeClass('mob-custLocation-containerIos');
+                $('.main-footer').removeClass('visibleHidden');
+                $('body').css('overflow', '');
+            });
+
+
+            // $(document).ready(function(){
+            $(document).on('ready', function () {
+                /*$('#video-modal0.modal').on('shown.bs.modal', function (e) {
+                  // $('.media-slider-mobile').slick();
+                  $('.media-slider-mobile').slick('setPosition');
+                });*/
+
+                /*$('.media-slider-mobile').on('init', function(event, slick){
+                    console.log("initialized")
+                });
+                $('.media-slider-mobile').slick();*/
+                /*$('.media-slider-mobile').slick({
+                  responsive: [
+                    {
+                      breakpoint: 767,
+                      settings: {
+                        centerMode: false,
+                        slidesToShow: 1.5,
+                        speed: 100,
+                        slidesToScroll: 1,
+                      }
+                    },
+                  ]
+                });
+                $('.language-ar .media-slider-mobile').slick({rtl: true,});*/
+            });
+
+
+
+        });
+
+    </script>
+    
+    <link rel="stylesheet" type="text/css"
+        href="https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/css/magazine.css?1613653602">
+    <link rel="stylesheet" type="text/css"
+        href="https://uatwww2.homecentre.com/ecomm/sites/ecomm/modules/custom/homecentre_custom/css/flipbook.css?1640159510">
+     
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.c1.amplience.net/c/homecentre/slick_js"></script>
+    <script src="homecentreom_colette_script.js"></script>
+    <link rel="stylesheet" href="hc-style-ar.min.css">
+</body>
+
+</html>

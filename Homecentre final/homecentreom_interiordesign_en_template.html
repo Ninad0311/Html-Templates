@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design</title>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div class="language-en interior-design-main interior_design">
+        <!--Header-->
+        <div class="header_carousel">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item item1_ae overlay active"> </div>
+                    <div class="item item2_ae overlay"> </div>
+                    <div class="item item3_ae overlay"> </div>
+                    <div class="item item4_ae overlay"> </div>
+                    <div class="item item5_ae overlay"> </div>
+                    <div class="item item6_ae overlay"> </div>
+                </div>
+            </div>
+        </div>
+        <!--header text-->
+        <div class="col-xs-12 header_text_form">
+            <div class="container">
+                <div class="col-sm-6 col-xs-12 header_text">
+                    <div class="brand-img">
+                        <!-- <img class="img-responsive header_text_img" srcset="/images/Header_icon.svg"  height="100" width="100" alt=""> -->
+                    </div>
+                    <h1 class="hidden-xs">Home Design<br />Service<h1>
+                            <h1 class="visible-xs">Home Design<br />Service<h1>
+                                    <h2 class="hidden-xs">From ideation to completion, let Home Centre's interior design
+                                        team turn your dream home into a reality.</h2>
+                                    <h2 class="visible-xs">From ideation to completion, let Home Centre's<br />interior
+                                        design team turn your dream home<br />into a reality.</h2> <a href="#what-services"
+                                        class="btn upper">Learn more</a>
+                </div>
+                <div class="header_form id-form col-sm-6 col-xs-12">
+                    <div class="form_title text-center">
+                        <h2>Sign up for your<br>personalized consultation</h2>
+                    </div>
+                    <form id="form_id" method="POST" action="" enctype="multipart/form-data">
+                        <div id="signup-name" class="title_1 row">
+                            <div class="labels"> Name: </div>
+                            <div class="inputs"> <input type="text" autocomplete="off" name="name" id="lms-name-add"
+                                    class="name store" /><br />
+                                <!-- <p id="name-error" class="error" style="color:red;text-align:left;display:none">This field is mandatory.</p> -->
+                            </div>
+                        </div>
+                        <div id="signup-email" class="title_1 row">
+                            <div class="labels"> Email: </div>
+                            <div class="inputs"> <input type="text" autocomplete="off" name="email" id="lms-email-add-form"
+                                    class="email store" /><br />
+                                <!-- <p id="email-error" class="error" style="color:red;text-align:left;display:none">This field is mandatory.</p>
+    		          <p id="email-error_2" class="error" style="color:red;text-align:left;display:none">You have already subscribed.</p>
+    		          <p id="email-error_3" class="error" style="color:red;text-align:left;display:none">Please enter correct format.</p> -->
+                            </div>
+                        </div>
+                        <div id="signup-phone" class="title_1 row">
+                            <div class="labels"> Mobile Phone: </div>
+                            <div class="inputs"> <input type="tel" name="phone" class="phone store" id="lms-mobile-add" />
+                                <!-- <p id="mobile-error" class="error" style="color:red;text-align:left;display:none">This field is mandatory.</p>  
+    	          <p id="mobile-error_2" class="error" style="color:red;text-align:left;display:none"> Please enter correct format.</p> -->
+                            </div>
+                        </div>
+                        <div id="signup-city" class="title_1 row">
+                            <div class="labels"> </div>
+                            <div class="inputs">
+                                <div class="col-xs-4" style="display : none;"> <input type="radio" name="city"
+                                        value="Dubai"> <span class="span_city"> Dubai</span> </div>
+                                <div class="col-xs-8" style="display : none;"> <input type="radio" name="city"
+                                        value="Abu Dhabi"> <span class="span_city"> Abu Dhabi</span> </div>
+                            </div>
+                        </div>
+                        <div id="interested_in" class="title_1 row" style="display:none;">
+                            <div class="labels"> Interested in: </div>
+                            <div class="inputs">
+                                <div class="store_consultation_div"> <input type="radio" name="interested_in"
+                                        value="Store Consultation"> <span class="store_consultation radio_tab"> Store
+                                        Consultation </span> </div>
+                                <div class="design_solution_div"> <input type="radio" name="interested_in"
+                                        value="Design Solution"> <span class="design_solution radio_tab"> Design Solution
+                                    </span> </div>
+                                <div class="modular_storage_div"> <input type="radio" name="interested_in"
+                                        value="Modular Storage"> <span class="modular_storage radio_tab"> Modular Storage
+                                    </span> </div>
+                            </div>
+                        </div> <input type="hidden" name="language" value="en"> <input type="hidden" name="territory"
+                            value="om">
+                        <div id="signup-submit" class="title_4  text-center"> <input type="submit" value='Submit '
+                                id="notify-submit-form" class="submitform" /> </div>
+                        <p id="email-error_2" class="error" style="color:#D7244C;text-align:left;display:none"> You have
+                            already subscribed. </p>
+                        <div id="success" class="thank_you text-center" style="color:#B8D64D;display:none"> <a id="success1"
+                                href="#" class="thank_you" data-toggle="modal" data-target="#myModal2"></a> </div>
+                        <!-- <div id="success" class="thank_you text-center" style="color:#B8D64D;display:none">
+              	<p><strong>Thank you. We’ll let you know.</strong></p>
+            	</div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--What do we offer section   -->
+        <div class="container what_services">
+            <div class="col-xs-12" id="what-services">
+                <h2 class="title text-center"> Our Services </h2>
+            </div>
+            <div class="col-xs-12 what_offer_section">
+                <div class="col-sm-3 col-xs-12 what_offer what_offer_1 text-center">
+                    <div class="">
+                        <picture>
+                            <source
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_1_hc_interior_design_desk"
+                                media="(min-width:768px)">
+                            <source
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_mob_1_hc_interior_design_mob"
+                                media="(max-width:767px)"> <img class="img-responsive what_offer_img"
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_1_hc_interior_design_desk"
+                                alt="">
+                        </picture>
+                    </div>
+                    <div class="offer_icon">
+                        <!-- <img class="img-responsive what_offer_icon" srcset="/images/Interior_Design.svg"  height="43" width="34" alt=""> -->
+                    </div>
+                    <div class="">
+                        <h3>Consultation</h3>
+                    </div>
+                    <div class="desc">
+                        <p>Creating your dream space is now easier than ever. Connect with our interior designers for
+                            personalized advice.</p>
+                    </div>
+                    <!-- <div class="cta text-center">
+    					<span class="btn upper" href="">Contact Us</span>
+    				</div>	 -->
+                </div>
+                <div class="col-sm-3 col-xs-12 what_offer what_offer_2 text-center what_offer_middle">
+                    <div class="">
+                        <picture>
+                            <source
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_2_hc_interior_design_desk"
+                                media="(min-width:768px)">
+                            <source
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_mob_2_hc_interior_design_mob"
+                                media="(max-width:767px)"> <img class="img-responsive what_offer_img"
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_2_hc_interior_design_desk"
+                                alt="">
+                        </picture>
+                    </div>
+                    <div class="offer_icon">
+                        <!-- <img class="img-responsive what_offer_icon" srcset="/images/Modular_Storage.svg" height="41" width="35" alt=""> -->
+                    </div>
+                    <div class="">
+                        <h3>Interior Design</h3>
+                    </div>
+                    <div class="desc">
+                        <p>We take care of your complete home interior from concept to completion. </p>
+                    </div>
+                    <!--<div class="cta text-center">
+    			<span class="btn upper" href="">Contact Us</span>
+    			</div> -->
+                </div>
+                <div class="col-sm-3 col-xs-12 what_offer what_offer_3 text-center">
+                    <div class="">
+                        <picture>
+                            <source
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_3_hc_interior_design_desk"
+                                media="(min-width:768px)">
+                            <source
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_mob_3_hc_interior_design_mob"
+                                media="(max-width:767px)"> <img class="img-responsive what_offer_img"
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/B2C_Services_3_hc_interior_design_desk"
+                                alt="">
+                        </picture>
+                    </div>
+                    <div class="offer_icon">
+                        <!-- <img class="img-responsive what_offer_icon" srcset="/images/Furniture_Home_Décor.svg" height="36" width="69" alt=""> -->
+                    </div>
+                    <div class="">
+                        <h3>Customized Solutions</h3>
+                    </div>
+                    <div class="desc">
+                        <p>We offer a range of modular wardrobes, sofas and beds that can be customized to meet your
+                            requirements.</p>
+                    </div>
+                    <!-- 			<div class="cta text-center">
+    				<span class="btn upper" href="">Contact Us</span>
+    			</div>	 -->
+                </div>
+                <div class="col-sm-3 col-xs-12 what_offer what_offer_4 text-center">
+                    <div class="">
+                        <picture>
+                            <source
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/DA_hc_interior_design_desk"
+                                media="(min-width:768px)">
+                            <source
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/DA-Mob_hc_interior_design_mob"
+                                media="(max-width:767px)"> <img class="img-responsive what_offer_img"
+                                srcset="https://homecentre.a.bigcontent.io/v1/static/DA_hc_interior_design_desk"
+                                alt="">
+                        </picture>
+                    </div>
+                    <div class="offer_icon">
+                        <!-- <img class="img-responsive what_offer_icon" srcset="/images/delivery_assembly_icon.svg" height="36" width="69" alt=""> -->
+                    </div>
+                    <div class="da">
+                        <h3>Delivery & Assembly</h3>
+                    </div>
+                    <div class="desc">
+                        <p>Streamlined for convenience, let our team of professionals bring your vision to life.</p>
+                    </div>
+                    <!-- 			<div class="cta text-center">
+    				<span class="btn upper" href="">Contact Us</span>
+    			</div>	 -->
+                </div>
+            </div>
+        </div>
+        <!--How does it work-->
+        <div class="how_does_it_work">
+            <div class="container">
+                <div class="col-xs-12">
+                    <div class="col-xs-12 text-center">
+                        <h2 class="title">How does it work?</h2>
+                    </div>
+                    <ul class="col-xs-12 text-center nav nav-tabs">
+                        <li class="col-xs-4 active"> <a data-toggle="tab" href="#tab_1">
+                                <div class="Consultation">
+                                    <!-- <img class="img-responsive icon" srcset="/images/Collaboration.svg"  height="70" width="85" alt=""> -->
+                                </div>
+                                <h3>Consultation</h3>
+                            </a> </li>
+                        <li class="col-xs-4 "> <a data-toggle="tab" href="#tab_2">
+                                <div class="Execution">
+                                    <!-- <img class="img-responsive icon exe" srcset="/images/Execution.svg"  height="74" width="73" alt=""> -->
+                                </div>
+                                <h3>Execution</h3>
+                            </a> </li>
+                        <li class="col-xs-4"> <a data-toggle="tab" href="#tab_3">
+                                <div class="Installation">
+                                    <!-- <img class="img-responsive icon del" srcset="/images/Delivery.svg"  height="67" width="58" alt=""> -->
+                                </div>
+                                <h3>Installation</h3>
+                            </a> </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab_1" class="col-xs-12 tab-pane fade in active">
+                            <div class="visible-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_1_hc_interior_design"
+                                    alt=""> </div>
+                            <div class="col-sm-6 col-xs-12 work_desc">
+                                <p> Enjoy a complimentary in-store consultation with one of our interior designers to
+                                    discuss your home aspirations.</p><br />
+                                <p> When you are ready to start, schedule a home consultation for your dedicated interior
+                                    designer to conduct a detailed site analysis.</p><br />
+                            </div>
+                            <div class="col-xs-6 hidden-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_1_hc_interior_design"
+                                    alt=""> </div>
+                        </div>
+                        <div id="tab_2" class="col-xs-12 tab-pane fade">
+                            <div class="visible-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_3_hc_interior_design"
+                                    alt=""> </div>
+                            <div class="col-sm-6 col-xs-12 work_desc">
+                                <p> This is where you get to see your ideas come to life. You will be presented with a 2D
+                                    floor layout for an understanding of the furniture layout, mood boards allowing you to
+                                    envision the result and detailed quotations for all products.</p>
+                            </div>
+                            <div class="col-xs-6 hidden-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_3_hc_interior_design"
+                                    alt=""> </div>
+                        </div>
+                        <div id="tab_3" class="col-xs-12 tab-pane fade">
+                            <div class="visible-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_2_hc_interior_design"
+                                    alt=""> </div>
+                            <div class="col-sm-6 col-xs-12 work_desc">
+                                <p> The interior designer will be present to ensure furniture is allocated as per agreed
+                                    layouts. The designer ensure your space looks exactly as you envisioned it. </p>
+                            </div>
+                            <div class="col-xs-6 hidden-xs"> <img class="img-responsive"
+                                    srcset="https://homecentre.a.bigcontent.io/v1/static/How_Does_It_Work_2_hc_interior_design"
+                                    alt=""> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Why collaborate with us -->
+        <div class="why_collaborate" style="display:none;">
+            <div class="container">
+                <div class="col-xs-12 first_block">
+                    <h2 class="title text-center"> Why collaborate with us? </h2>
+                </div>
+                <div class="col-xs-12 second_block">
+                   
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default professional"> <a data-toggle="collapse"
+                                    data-parent="#accordion" href="#collapse1">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Professional Design Consultations </h3>
+                                    </div>
+                                </a>
+                                <div id="collapse1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p> Our design experts will meet with you. They will be able to give you insights
+                                            and a comprehensive overview of the project that will enable you to make
+                                            informed decisions, best suited to your requirements. Bring any photos or ideas
+                                            you have and we'll work with you and create a digital mood board. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default home"> <a data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapse2">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Home Visits </h3>
+                                    </div>
+                                </a>
+                                <div id="collapse2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p> Simply make an appointment and our design expert will come to your home for a
+                                            consultation. While there, the expert will have a chance to do measurements,
+                                            note down any technical observations and catch any details they could use to
+                                            help flesh out your thoughts and ideas. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default end_to_end"> <a data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapse3">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">End to End Services </h3>
+                                    </div>
+                                </a>
+                                <div id="collapse3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p> Our service covers your interior design needs, from initial ideation to eventual
+                                            completion. Our consultant will be the single point of contact to guide you at
+                                            every step, answer all your questions and keep your project running smoothly
+                                            from start to finish. </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default augmented"> <a data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapse4" aria-expanded="true">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"> Augmented Reality </h3>
+                                    </div>
+                                </a>
+                                <div id="collapse4" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p> With our AR feature, you'll be able to see how any product looks in your space
+                                            before you actually buy it. Being able to visualise your ideas will help you
+                                            personalise your designs. We'll do our part by creating a custom 2D floorplan to
+                                            ensure that your new pieces will fit perfectly. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FAQ section-->
+        <div class="faq">
+            <div class="container">
+                <div class="col-xs-12 text-center">
+                    <p class="faq-sec-1"> Let's work together and turn your house<br />into the home of your dreams. </p>
+                    <p class="faq-sec-2"> Have any other questions? <br />Check out these <a href="#" class="faq-list"
+                            data-toggle="modal" data-target="#myModal">FAQ's</a> </p>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">FAQ's</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="add">
+                            <!-- <div class="h3">Home Centre Residential Interior Design Services</div> -->
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_1">
+                                    <p>What is Homecentre Interior design services?</p>
+                                </a>
+                                <div id="faq_1" class="faq-body collapse">
+                                    <p>An end-to-end interior design service, offering:</p>
+                                    <ul>
+                                        <li>Interior design</li>
+                                        <li>Modular wardrobes, sofas and beds</li>
+                                        <li>Home Decor</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_2">
+                                    <p>Why should I get my home designed by Homecentre design team?</p>
+                                </a>
+                                <div id="faq_2" class="faq-body collapse">
+                                    <p>As leaders in the home and furniture space, no one understands homes better than us!
+                                        We have served millions of happy customers all over the Middle East. Home Centre
+                                        Residential Interior Design Services relies on the Home Centre design team's
+                                        expertise, experience and knowledge of regional customers to offer an end-to-end
+                                        interior design service.</p>
+                                </div>
+                            </div>
+                            <div class="faqs" style="display:none;"> <a href="#" class="modal_quest" data-toggle="collapse"
+                                    data-target="#faq_3">
+                                    <p>What are the advantages of Home Centre Residential Interior Design Services over
+                                        other interior designers and contractors?</p>
+                                </a>
+                                <div id="faq_3" class="faq-body collapse">
+                                    <p>Plenty! Our service is end-to-end, we take care of all your interior design needs
+                                        from start to finish. Our consultant will be the single point of contact to guide
+                                        you at every step, answer all your questions and keep your project running smoothly
+                                        from start to finish.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_4">
+                                    <p>How much does this service cost?</p>
+                                </a>
+                                <div id="faq_4" class="faq-body collapse">
+                                    <p>Our refundable design fees are as follows:</br> - Studio or 1 Bedroom: AED 799</br>
+                                        Refundable if a minimum spend of AED 5,000 is made at Home Centre</br> - 2 Bedroom:
+                                        AED 1,499</br> Refundable if a minimum spend of AED 13,000 is made at Home
+                                        Centre</br> - 3 Bedroom and above: AED 2,999</br> Refundable if a minimum spend of
+                                        AED 25,000 is made at Home Centre</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_5">
+                                    <p>Is this service available at all our stores in the UAE ?</p>
+                                </a>
+                                <div id="faq_5" class="faq-body collapse">
+                                    <p>Yes, the service is available at all stores across UAE based on prearrangements.</p>
+                                </div>
+                            </div>
+                            <div class="faqs" style="display:none;"> <a href="#" class="modal_quest" data-toggle="collapse"
+                                    data-target="#faq_6">
+                                    <p>How can I enjoy your design services?</p>
+                                </a>
+                                <div id="faq_6" class="faq-body collapse">
+                                    <p>It’s simple. Book a design consultation above to get started. It would be great if
+                                        you have a layout of your space as well.</p>
+                                </div>
+                            </div>
+                            <div class="faqs" style="display:none;"> <a href="#" class="modal_quest" data-toggle="collapse"
+                                    data-target="#faq_7">
+                                    <p>Do you do home visits to provide consultation?</p>
+                                </a>
+                                <div id="faq_7" class="faq-body collapse">
+                                    <p>Yes.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_8">
+                                    <p>What does a consultation include?</p>
+                                </a>
+                                <div id="faq_8" class="faq-body collapse">
+                                    <p>Meet with interior designer: </br> Discuss your requirements and let our interior
+                                        designer guide you in terms of space, furniture, accessories selection,
+                                        functionality and budget. </br></br> Explore a choice of materials: </br> View and
+                                        touch our range of materials and finishes at one location. </br></br> View furniture
+                                        and décor: </br> Browse through our immersive store environment to better visualize
+                                        the options available to you. </p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_9">
+                                    <p>Do I need to book an appointment for Home Centre Residential Interior Design
+                                        Services?</p>
+                                </a>
+                                <div id="faq_9" class="faq-body collapse">
+                                    <p>Yes, you must book an appointment for your initial in-store consultation.If you wish
+                                        to continue with the service, you can book a home visit with an interior designer
+                                        for a fee payable in-store.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_10">
+                                    <p>What warranties and guarantees are given on the products?</p>
+                                </a>
+                                <div id="faq_10" class="faq-body collapse">
+                                    <p>All our products come with warranties of different durations, the details of which
+                                        are on our product page.</p>
+                                </div>
+                            </div>
+                            <div class="faqs" style="display:none;"> <a href="#" class="modal_quest" data-toggle="collapse"
+                                    data-target="#faq_11">
+                                    <p>Will I get a warranty card?</p>
+                                </a>
+                                <div id="faq_11" class="faq-body collapse">
+                                    <p>A warranty card is only available for mattresses. All other product warranties will
+                                        be mentioned on the invoice.</p>
+                                </div>
+                            </div>
+                            <div class="h3 h3-top">Modular Wardrobe</div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_12">
+                                    <p>What is modular furniture?</p>
+                                </a>
+                                <div id="faq_12" class="faq-body collapse">
+                                    <p>Modular furniture is furniture that is customised to suit your requirements. They are
+                                        manufactured in factories using advanced technology, generally made in engineered
+                                        wood. Modular furniture is easy to assemble and comes with a great finish.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_13">
+                                    <p>What modular units can you make?</p>
+                                </a>
+                                <div id="faq_13" class="faq-body collapse">
+                                    <p>We offer modular systems, wardrobes, sliding and hanging doors, children’s storage,
+                                        living room storage and sofas.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_14">
+                                    <p>Will the modular furniture be made on site?</p>
+                                </a>
+                                <div id="faq_14" class="faq-body collapse">
+                                    <p>All our modular furniture is entirely factory-made and finished. The furniture is
+                                        delivered to your doorstep in flat-pack boxes. Only the assembly and installation
+                                        are done on site.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_15">
+                                    <p>How is your modular furniture transported?</p>
+                                </a>
+                                <div id="faq_15" class="faq-body collapse">
+                                    <p>Our fleet of vehicles will deliver the modular furniture to your home, directly from
+                                        the warehouse.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_16">
+                                    <p>What is the warranty on modular furniture?</p>
+                                </a>
+                                <div id="faq_16" class="faq-body collapse">
+                                    <p>Modular furniture comes with a minimum warranty of 2 years against manufacturing
+                                        defects.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_17">
+                                    <p>What is covered in the warranty?</p>
+                                </a>
+                                <div id="faq_17" class="faq-body collapse">
+                                    <p>The warranty covers manufacturing defects in the wood work.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_18">
+                                    <p>Who will carry out the installation/assembly?</p>
+                                </a>
+                                <div id="faq_18" class="faq-body collapse">
+                                    <p>We have a team of trained techicians who will assemble and install your modular
+                                        furniture.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_19">
+                                    <p>Who do I contact in case I have an issue with my modular furniture after
+                                        installation?</p>
+                                </a>
+                                <div id="faq_19" class="faq-body collapse">
+                                    <p>Please contact Customer Support to report any issues that arise after installation.
+                                        You can also get in touch with your Interior design consultant.</p>
+                                </div>
+                            </div>
+                            <div class="h3 h3-top">Interior Design & Build</div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_20">
+                                    <p>Can you renovate my existing home?</p>
+                                </a>
+                                <div id="faq_20" class="faq-body collapse">
+                                    <p>No, the premises must be prepared for installation from Home Centre. We don’t remove
+                                        or shift existing furniture.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_21">
+                                    <p>Can I procure the material myself through my own set of vendors?</p>
+                                </a>
+                                <div id="faq_21" class="faq-body collapse">
+                                    <p>We offer existing lines and collections available at Home Centre. We do not offer
+                                        bespoke or custom-made furniture and accessories.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_22">
+                                    <p>What qualifications do your Interior designers have?</p>
+                                </a>
+                                <div id="faq_22" class="faq-body collapse">
+                                    <p>All our designers are qualified interior designers from premier institutes, who have
+                                        a proven track record with reputed companies.</p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_23">
+                                    <p>What can I expect from the Interior designers?</p>
+                                </a>
+                                <div id="faq_23" class="faq-body collapse">
+                                    <p>Our interior designer will meet with you to discuss and understand your requirements
+                                        and budget, conduct a site visit, prepare two proposals and guide you through the
+                                        purchase process. They will be present on-site at the time of delivery to ensure
+                                        accuracy and full completion as per agreed design concept. </p>
+                                </div>
+                            </div>
+                            <div class="faqs"> <a href="#" class="modal_quest" data-toggle="collapse" data-target="#faq_24">
+                                    <p>Can I suggest changes in the design after the order is confirmed?</p>
+                                </a>
+                                <div id="faq_24" class="faq-body collapse">
+                                    <p>Once the order is confirmed, you will not be able to change the requirements.
+                                        However, your design consultant will be able to guide you better on this.</p>
+                                </div>
+                            </div>
+                            <div class="faqs" style="display:none;"> <a href="#" class="modal_quest" data-toggle="collapse"
+                                    data-target="#faq_25">
+                                    <p>Will I get regular progress updates?</p>
+                                </a>
+                                <div id="faq_25" class="faq-body collapse">
+                                    <p>Once the project is initiated, we’ll share a project plan with you, followed by
+                                        regular progress updates.</p>
+                                </div>
+                            </div>
+                            <div class="faqs" style="display:none;"> <a href="#" class="modal_quest" data-toggle="collapse"
+                                    data-target="#faq_26">
+                                    <p>Who will do the installation for my project?</p>
+                                </a>
+                                <div id="faq_26" class="faq-body collapse">
+                                    <p>Furniture and home décor will be delivered and installed by our team. However,
+                                        installation of pendant lamps/ chandeliers, wall mirrors and wall art are not done
+                                        by us. An external third party can be suggested for execution under the supervision
+                                        of our interior designer. Home Centre will not be responsible for quotations or
+                                        pricing.</p>
+                                </div>
+                            </div>
+                            <div class="faqs" style="display:none;"> <a href="#" class="modal_quest" data-toggle="collapse"
+                                    data-target="#faq_27">
+                                    <p>How long does it take to complete the designs?</p>
+                                </a>
+                                <div id="faq_27" class="faq-body collapse">
+                                    <p>Initial designs will be ready for review 7 days after our designers visit your site.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="add">
+                            <h2><strong>Thank you. We’ll let you know.</strong></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="homecentreom_script.js"></script>
+    <link rel="stylesheet" href="hc-style-en.min.css">
+</body>
+</html>

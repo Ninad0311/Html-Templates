@@ -1,0 +1,58 @@
+{
+  "headboard": {
+    "neo": {
+      "desk_img": "Neo_cream_hc_stellar_bedroom_desk",
+      "mob_img": "Neo_cream_hc_stellar_bedroom_mob",
+      "item_code": "163114463"
+    },
+    "ace": {
+      "desk_img": "Ace_cream_hc_stellar_bedroom_desk",
+      "mob_img": "Ace_cream_hc_stellar_bedroom_mob",
+      "item_code": "163114415"
+    },
+    "ark": {
+      "desk_img": "Ark_cream_hc_stellar_bedroom_desk",
+      "mob_img": "Ark_cream_hc_stellar_bedroom_mob",
+      "item_code": "163114418"
+    },
+    "max": {
+      "desk_img": "Max_cream_hc_stellar_bedroom_desk",
+      "mob_img": "Max_cream_hc_stellar_bedroom_mob",
+      "item_code": "163114460"
+    },
+    "ora": {
+      "desk_img": "Ora_cream_hc_stellar_bedroom_desk",
+      "mob_img": "Ora_cream_hc_stellar_bedroom_mob",
+      "item_code": "163114466"
+    },
+    "vox": {
+      "desk_img": "Vox_cream_hc_stellar_bedroom_desk",
+      "mob_img": "Vox_cream_hc_stellar_bedroom_mob",
+      "item_code": "163114469"
+    }
+  },
+  "base": {
+    "default": {
+      "desk_img": "Base_Without_Storage_cream_hc_stellar_bedroom_desk",
+      "mob_img": "Base_Without_Storage_cream_hc_stellar_bedroom_mob",
+      "item_code": "163114423"
+    },
+    "drawer": {
+      "desk_img": "Base_With_Drawer_cream_hc_stellar_bedroom_desk",
+      "mob_img": "Base_With_Drawer_cream_hc_stellar_bedroom_mob",
+      "item_code": "163114433"
+    },
+    "hydraulic": {
+      "desk_img": "Base_Hydraulic_cream_hc_stellar_bedroom_desk",
+      "mob_img": "Base_Hydraulic_cream_hc_stellar_bedroom_mob",
+      "item_code": "163114447"
+    }
+  },
+  "nightstand": {
+    "3Dr": {
+      "desk_img": "Nightstand_cream_hc_stellar_bedroom_desk",
+      "mob_img": "Nightstand_cream_hc_stellar_bedroom",
+      "item_code": "163114413"
+    }
+  }
+}

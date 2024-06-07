@@ -1,0 +1,26 @@
+{
+  "headboard": {
+    "curve": {
+      "desk_img": "Curve-qa-om_white_dove_hc_colette_bedroom_desk_om",
+      "mob_img": "Curve-qa-om_whitee_hc_colette_bedroom_mob_om",
+      "item_code": "162586959"
+    },
+    "straight": {
+      "desk_img": "Straight-qa-om_white_dove_hc_colette_bedroom_desk_om",
+      "mob_img": "Straight-qa-om_whitee_hc_colette_bedroom_mob_om",
+      "item_code": "162586355"
+    },
+    "wing": {
+      "desk_img": "Wing-qa-om_white_dove_hc_colette_bedroom_desk_om",
+      "mob_img": "Wing-qa-om_whitee_hc_colette_bedroom_mob_om",
+      "item_code": "162586918"
+    }
+  },
+  "base": {
+    "only-base": {
+      "desk_img": "Single-Base-Only-qa-om_white_dove_hc_colette_bedroom_desk_om",
+      "mob_img": "Single-Base-Only-qa-om_whitee_hc_colette_bedroom_mob_om",
+      "item_code": "162585181"
+    }
+  }
+}

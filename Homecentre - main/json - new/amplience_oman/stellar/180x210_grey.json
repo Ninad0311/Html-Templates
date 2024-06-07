@@ -1,0 +1,63 @@
+{
+  "headboard": {
+    "neo": {
+      "desk_img": "Neo_grey_hc_stellar_bedroom_desk",
+      "mob_img": "Neo_grey_hc_stellar_bedroom_mob",
+      "item_code": "158598483"
+    },
+    "ace": {
+      "desk_img": "Ace_grey_hc_stellar_bedroom_desk",
+      "mob_img": "Ace_grey_hc_stellar_bedroom_mob",
+      "item_code": "158598496"
+    },
+    "ark": {
+      "desk_img": "Ark_grey_hc_stellar_bedroom_desk",
+      "mob_img": "Ark_grey_hc_stellar_bedroom_mob",
+      "item_code": "158598472"
+    },
+    "max": {
+      "desk_img": "Max_grey_hc_stellar_bedroom_desk",
+      "mob_img": "Max_grey_hc_stellar_bedroom_mob",
+      "item_code": "161637569"
+    },
+    "ora": {
+      "desk_img": "Ora_grey_hc_stellar_bedroom_desk",
+      "mob_img": "Ora_grey_hc_stellar_bedroom_desk",
+      "item_code": "161637572"
+    },
+    "vox": {
+      "desk_img": "Vox_grey_hc_stellar_bedroom_desk",
+      "mob_img": "Vox_grey_hc_stellar_bedroom_mob",
+      "item_code": "161637575"
+    }
+  },
+  "base": {
+    "default": {
+      "desk_img": "Base_Without_Storage_grey_hc_stellar_bedroom_desk",
+      "mob_img": "Base_Without_Storage_grey_hc_stellar_bedroom_mob",
+      "item_code": "158598586"
+    },
+    "drawer": {
+      "desk_img": "Base_With_Storage_grey_hc_stellar_bedroom_desk",
+      "mob_img": "Base_With_Storage_grey_hc_stellar_bedroom_mob",
+      "item_code": "158598538"
+    },
+    "hydraulic": {
+      "desk_img": "Base_Hydraulic_grey_hc_stellar_bedroom_desk",
+      "mob_img": "Base_Hydraulic_grey_hc_stellar_bedroom_mob",
+      "item_code": "158598589"
+    }
+  },
+  "nightstand": {
+    "3Dr": {
+      "desk_img": "Nightstand-3dr_grey_hc_stellar_bedroom_desk",
+      "mob_img": "Nightstand-3dr_grey_hc_stellar_bedroom_mob",
+      "item_code": "158598468"
+    },
+    "smart": {
+      "desk_img": "Nightstand-Smart_grey_hc_stellar_bedroom_desk",
+      "mob_img": "Nightstand-Smart_grey_hc_stellar_bedroom_mob",
+      "item_code": "162576220"
+    }
+  }
+}

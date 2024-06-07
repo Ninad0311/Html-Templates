@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Tracker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <div class="language-en">
+        <div class="main_apptracker">
+            <picture>
+                <source
+                    srcset="https://media.centrepointstores.com/i/centrepoint/Desktop_Headerom_new_en_cp_apptracker_desk_en"
+                    media="(min-width:768px)">
+                <source
+                    srcset="https://media.centrepointstores.com/i/centrepoint/Mobile_Headerom_new_en_cp_apptracker_mob_en"
+                    media="(max-width:767px)"> <img class="img-responsive"
+                    srcset="https://media.centrepointstores.com/i/centrepoint/Desktop_Headerom_new_en_cp_apptracker_desk_en">
+            </picture>
+            <div class="container-fluid how_it_works">
+                <h2 class="text-center"><span class="underline">Here’s how it works: </span></h2>
+                <div class="how_div_container">
+                    <div class="col-sm-3 col-xs-6 text-center how_div">
+                        <div class="stepss text-center"> <img
+                                src="https://centrepoint.a.bigcontent.io/v1/static/Icon-1_cp_apptracker_desk_mob"
+                                width="50" height="50" />
+                            <h4 class="hidden-xs">1. Enter your details – your HRMS ID, full name and location.</h4>
+                            <h4 class="visible-xs">1. Enter your details – your HRMS ID, full name and location. </h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-6 text-center how_div">
+                        <div class="stepss text-center third"> <img
+                                src="https://centrepoint.a.bigcontent.io/v1/static/Icon-2a_cp_apptracker_desk_mob"
+                                width="50" height="50" />
+                            <h4>2. Review your details and tap on the Generate My QR Code button.</h4>
+                            <!-- <h4 class="visible-xs"></h4> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-6 text-center how_div">
+                        <div class="stepss text-center"> <img
+                                src="https://centrepoint.a.bigcontent.io/v1/static/Icon-3_cp_apptracker_desk_mob"
+                                width="50" height="50" />
+                            <h4>3. Once your QR code is created, share it in-store or on social media.</h4>
+                            <!-- <h4 class="visible-xs"></h4><p class="blank_div"></p> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-6 text-center how_div">
+                        <div class="stepss steps_last text-center"> <img
+                                src="https://centrepoint.a.bigcontent.io/v1/static/Icon-4_cp_apptracker_desk_mob"
+                                width="50" height="50" />
+                            <h4>4. Use the Performance Tracker to check the number of app downloads for your store. </h4>
+                            <!-- <h4 class="visible-xs"> </h4> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid text-center what_in">
+                <h2><span class="underline">What’s in it for you?</span></h2> <!-- <h4 ></h4> -->
+                <h4>Earn every time someone downloads the app with your QR code.</h4>
+                <h3>Get started now</h3>
+            </div>
+            <div class="container-fluid form">
+                <form class="form-group col-sm-6 col-xs-12" id="form_id" method="GET"> <label class="hrms_id">HRMS
+                        ID:</label><br> <!-- <small id="userIDhelp" class="form-text text-muted hrms_id"></small> --> <small
+                        id="userIDhelp" class="form-text text-muted hrms_id">Enter your HRMS ID </small> <br> <input type="text"
+                        class="form-control" id="inputUserID" placeholder="12345" name="hrms_id"> <br> <label
+                        class="hrms_name">Name:</label> <input type="text" class="form-control" id="inputUserName"
+                        placeholder="Ahmed Salah" name="name"> <br> <label>Country:</label><br> <select name="country"
+                        class="country_drop" id="country">
+                        <option value="ae" selected>UAE</option>
+                        <option value="bh">BAH</option>
+                        <option value="sa">KSA</option>
+                        <option value="kw">KWD</option>
+                        <option value="qa">QA</option>
+                        <option value="om">OM</option>
+                    </select> <br> <br> <label>City:</label><br> <select name="city" class="city_drop" id="city">
+                        <option value="" selected></option>
+                    </select> <br> <label>Store:</label><br> <select name="store" class="store_drop" id="store">
+                        <option value="" selected></option>
+                    </select> <br> <br> <button type="submit" class="btn btn-primary generate">Generate My QR Code</button>
+                </form>
+                <div class="form-result col-sm-6 col-xs-12">
+                    <div class="result_div">
+                        <div class="col-sm-6 col-xs-6 name_text">
+                            <h4>Hello (<span id="name">Ahmed Salah</span>),<br /> here’s your QR code and link.</4>
+                                <h3>Happy sharing!</h3> <a href="#" id="fb_app_share" target="_blank" rel="noopener"
+                                    class="share_button"> <img class="YOUR_FB_CSS_STYLING_CLASS"
+                                        src="https://media.centrepointstores.com/i/centrepoint/Artboard1_cp_apptracker_desk_mob"
+                                        width="45px" height="45px" alt="Share on Facebook"> </a> <a href="#" id="tr_app_share"
+                                    target="_blank" class="share_button"> <img
+                                        src="https://media.centrepointstores.com/i/centrepoint/Artboard4_cp_apptracker_desk_mob"
+                                        width="45px" height="45px" /> </a> <a href="#" data-action="share/whatsapp/share"
+                                    id="wp_app_share" class="share_button"> <img
+                                        src="https://media.centrepointstores.com/i/centrepoint/Artboard3_cp_apptracker_desk_mob"
+                                        width="45px" height="45px" /> </a>
+                                <!-- <a href="https://twitter.com/share?text=qrlink" target="_blank" class="share_button"> -->
+                                <!-- <img src="" width="45px" height="45px"/> -->
+                                <!-- </a> -->
+                        </div>
+                        <div class="col-sm-6 col-xs-6">
+                            <div class="form-group" id="qrcode"><img class="disqr img-responsive"
+                                    src="https://media.centrepointstores.com/i/centrepoint/qrdemo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="per_link col-xs-12"> <label>Personalised link</label> <br> <input type="text" readonly disabled
+                            class="form-control-plaintext" id="finalLink" placeholder="Link will appear here" value="" /> </div>
+                </div>
+            </div>
+            <div class="container-fluid text-center track">
+                <h2>Track your performance</h2>
+                <h3>See how many app downloads you and your colleagues have driven. Tap on Performance Tracker.</h3> <button
+                    type="submit" class="btn btn-primary trackerbutton" disabled>Performance Tracker</button>
+                <h5 class="desc">*Only stores with a minimum of 5,000 downloads per month will be eligible to be entered for the
+                    cash reward.</h5>
+            </div>
+            <div class="tracker_div">
+                <div class="bg_img">
+                    <picture>
+                        <source
+                            srcset="https://media.centrepointstores.com/i/centrepoint/desk-bottom-en_cp_apptracker_desk_en"
+                            media="(min-width:768px)">
+                        <source
+                            srcset="https://media.centrepointstores.com/i/centrepoint/mob-bottom-en_cp_apptracker_mob_en"
+                            media="(max-width:767px)"> <img class="img-responsive"
+                            srcset="https://media.centrepointstores.com/i/centrepoint/desk-bottom-en_cp_apptracker_desk_en">
+                    </picture>
+                </div>
+                <!-- <div class="bg_text text-center">
+                <h3 class="top"></h3>
+                <h2 class="app_down"></h2>
+                <h2 class="champ" id="champ"></h2>        
+              </div> -->
+            </div>
+            <div class="bottom_div" style="display: none;">
+                <div class="table_result_div container-fluid" id="table_result_div"> </div>
+                <div class="indi_result container-fluid" style="display: none;">
+                    <div class="form_indi">
+                        <div class="col-sm-6 col-xs-12 form_1">
+                            <form class="form-group" id="form_individual_data" method="POST"> <label>HRMS ID</label><br> <small
+                                    id="userIDhelp" class="form-text text-muted">Enter your 5 or 6 digits</small> <br> <input
+                                    type="text" class="form-control" id="inputUserID" placeholder="12345" name="hrms_id"
+                                    minlength="5" maxlength="6" pattern="\d{5,6}" required> <br> <button type="submit"
+                                    class="btn btn-primary check">Check now</button> </form>
+                            <!-- <h4>Hey, (<span id="name_bottom"></span>), this is how you're doing</h4> -->
+                            <h4 class="bottom_text">Hey, (<span id="name_bottom"></span>) <br />this is how you're doing:</h4>
+                        </div>
+                        <div class="col-sm-6 col-xs-12 form_2"> <label>Total Installs</label> <input type="text"
+                                class="form-control" id="total_install" name="total_install"> <br> <label>Reinstalls</label>
+                            <input type="text" class="form-control" id="total_reinstall" name="total_reinstall"> <br> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script type="text/javascript">
+        $(function () {
+            form_save('en', 'https://origin.centrepointstores.com', 'om');
+        });
+    </script> -->
+    <!-- <script>
+        $(document).ready(function () {
+            var countryOptions = '';
+            var cityOptions = '';
+            var storeOptions = '';
+
+            var country_id = $('#country').val();
+            if (country_id != '') {
+                console.log(country_id);
+                $.getJSON('https://uatwww2.centrepointstores.com/ecomm/sites/ecomm/modules/custom/app_tracker/json/city.json', function (data) {
+                    cityOptions = '<option value="">Select city</option>';
+                    //console.log(data);
+                    $.each(data, function (key, city) {
+
+                        if (country_id == city.country_name) {
+                            cityOptions += '<option value="' + city.name + '">' + city.name + '</option>';
+                        }
+                    });
+                    $('#city').html(cityOptions);
+                });
+            }
+
+            else {
+                $('#city').html('<option value="">Select city</option>');
+                $('#store').html('<option value="">Select store</option>');
+            }
+
+
+            $(document).on('change', '#country', function () {
+
+                var country_id = $(this).val();
+                if (country_id != '') {
+                    $.getJSON('https://uatwww2.centrepointstores.com/ecomm/sites/ecomm/modules/custom/app_tracker/json/city.json', function (data) {
+                        cityOptions = '<option value="">Select city</option>';
+                        //console.log(data);
+                        $.each(data, function (key, city) {
+
+                            if (country_id == city.country_name) {
+                                cityOptions += '<option value="' + city.name + '">' + city.name + '</option>';
+                            }
+                        });
+                        $('#city').html(cityOptions);
+                    });
+                }
+
+                else {
+                    $('#city').html('<option value="">Select city</option>');
+                    $('#store').html('<option value="">Select store</option>');
+                }
+            });
+
+            $(document).on('change', '#city', function () {
+                var city_id = $(this).val();
+                if (city_id != '') {
+                    $.getJSON('https://uatwww2.centrepointstores.com/ecomm/sites/ecomm/modules/custom/app_tracker/json/store.json', function (data) {
+                        storeOptions = '<option value="">Select store</option>';
+                        $.each(data, function (key, store) {
+
+                            if (city_id == store.city_name) {
+                                storeOptions += '<option value="' + store.name + '">' + store.name + '</option>';
+                            }
+                        });
+                        $('#store').html(storeOptions);
+                    });
+                }
+                else {
+                    $('#store').html('<option value="">Select store</option>');
+                }
+            });
+        });
+    </script> -->
+
+    <script src="centrepointom_app_qr_code_script.js"></script>
+    <!-- <script src="https://origin.centrepointstores.com/sites/ecomm/modules/custom/app_tracker/js/app_tracker.js?v1715061899"></script> -->
+    <link rel="stylesheet" href="cpom-style-en.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://origin.centrepointstores.com/sites/ecomm/modules/custom/app_tracker/css/app_tracker.css?v1600070230"> -->
+</body>
+
+</html>
